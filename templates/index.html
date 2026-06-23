@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Akıllı Ev Kontrol Paneli</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Dark Mode Slate Color Palette */
+            --bg-body: #0f172a;
+            --bg-card: #1e293b;
+            --border-color: #334155;
+            
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            
+            --primary: #3b82f6; /* Blue */
+            --primary-hover: #60a5fa;
+            
+            --success: #34d399; /* Emerald Light */
+            --warning: #fbbf24; /* Amber Light */
+            --danger: #f87171;  /* Red Light */
+            
+            /* Gölgeler ve Köşeler */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --radius-md: 12px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5;
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-main);
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* --- Status Badges (Standart UI) --- */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+        }
+
+        #systemStatusBadge {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+
+        #systemStatusBadge.alert-active {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+
+        /* --- Simulation Switch (Standartlaştırma) --- */
+        .sim-control {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 1rem;
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .switch input { opacity: 0; width: 0; height: 0; }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #cbd5e1;
+            transition: .3s;
+            border-radius: 20px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .3s;
+            border-radius: 50%;
+            box-shadow: var(--shadow-sm);
+        }
+
+        input:checked + .slider { background-color: var(--primary); }
+        input:checked + .slider:before { transform: translateX(20px); }
+
+        /* --- Main Content --- */
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1600px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* --- Hero/Welcome Bölümü --- */
+        .hero-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hero-text h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 700px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        /* --- Buton Standartları --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover { background-color: var(--primary-hover); }
+
+        .btn-danger {
+            background-color: var(--danger);
+            color: white;
+        }
+        .btn-danger:hover { background-color: #dc2626; }
+
+        .btn-secondary {
+            background-color: var(--bg-card);
+            border-color: var(--border-color);
+            color: var(--text-main);
+        }
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: #cbd5e1;
+        }
+
+        /* --- Dashboard Grid --- */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* --- Standart Kart Tasarımı --- */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            transition: box-shadow 0.3s, border-color 0.3s;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover efekti basitleştirildi */
+        .card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Acil Durum Kart Tasarımı (İnsancıl ve Ciddi) */
+        .card.alert-fired {
+            border-color: var(--danger);
+            background-color: rgba(239, 68, 68, 0.08); /* Koyu kırmızı arka plan */
+        }
+        
+        .card.alert-fired::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background-color: var(--danger);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .card-title-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* Alarm durumunda ikon rengi */
+        .alert-fired .card-icon {
+            background-color: rgba(239, 68, 68, 0.15);
+            color: var(--danger);
+            border-color: rgba(239, 68, 68, 0.25);
+        }
+
+        .card-titles h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .card-titles span {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* --- Kart İçi Rozetler --- */
+        .card-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-success { background-color: rgba(16, 185, 129, 0.15); color: #34d399; }
+        .badge-danger { background-color: rgba(239, 68, 68, 0.15); color: #f87171; }
+        .badge-neutral { background-color: rgba(148, 163, 184, 0.15); color: #94a3b8; }
+
+        /* --- Metrik Gösterimi --- */
+        .card-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .metric-box {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .metric-unit {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-left: 0.25rem;
+        }
+
+        /* --- Kontrol Alanları --- */
+        .card-actions {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.25rem;
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .action-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        /* Standart Kontrol Butonu */
+        .control-btn {
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            background-color: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--text-main);
+            transition: all 0.2s;
+        }
+
+        .control-btn:hover {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .control-btn.active {
+            background-color: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+        .control-btn.active:hover { background-color: #059669; }
+
+        /* --- LED Kontrol Paneli (Yeniden Tasarlandı) --- */
+        .led-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .led-control-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background-color: #f8fafc;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .led-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* LED durumunu gösteren küçük nokta */
+        .led-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #cbd5e1; /* kapalı */
+            border: 2px solid #94a3b8;
+            transition: background-color 0.2s, box-shadow 0.2s;
+        }
+
+        /* Aktif LED Renkleri - Parlama efekti minimize edildi */
+        .led-red.active .led-indicator {
+            background-color: var(--danger);
+            border-color: #b91c1c;
+            box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+        }
+        .led-blue.active .led-indicator {
+            background-color: var(--primary);
+            border-color: #1d4ed8;
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+        }
+        .led-green.active .led-indicator {
+            background-color: var(--success);
+            border-color: #047857;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+        }
+
+        /* --- GPIO Pin Grid --- */
+        .pin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .pin-label {
+            background: #f1f5f9;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.5rem 0.25rem;
+            font-size: 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+
+        .pin-label.gnd-connected {
+            background-color: var(--danger);
+            color: white;
+            border-color: #b91c1c;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* --- Footer --- */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            background: var(--bg-card);
+            margin-top: 2rem;
+        }
+
+        /* Responsiveness */
+        @media(max-width: 768px) {
+            header { padding: 1rem; flex-direction: column; gap: 1rem; }
+            main { padding: 1rem; }
+            .hero-section { flex-direction: column; text-align: center; gap: 1.5rem; }
+            .card-metrics { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-house-signal"></i>
+            <span>MERKEZİ EV KONTROLÜ</span>
+        </div>
+        <div class="header-controls">
+            <div class="status-badge" id="systemStatusBadge">
+                <i class="fa-solid fa-shield-check"></i>
+                <span id="systemStatusText">SİSTEM GÜVENLİ</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1 id="heroTitle">Yönetim Paneline Hoşgeldiniz</h1>
+                <p>Mekatronik Mühendisliği Bitirme Projesi IoT Prototip Arayüzü. Bağlı istasyonların verilerini canlı izleyebilir ve aktüatörleri kontrol edebilirsiniz.</p>
+            </div>
+            <div class="hero-actions">
+                <button class="btn btn-secondary" onclick="window.location.reload()"><i class="fa-solid fa-sync"></i> Verileri Yenile</button>
+                <button class="btn btn-danger" id="btnResetAlarm" style="display: none;" onclick="resetAlarm()"><i class="fa-solid fa-bell-slash"></i> Alarmı Sustur</button>
+            </div>
+        </section>
+
+        <div class="dashboard-grid">
+            <div class="card" id="card_1">
+                <div class="card-header">
+                    <div class="card-title-area">
+                        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="card-titles">
+                            <h3>İstasyon 1</h3>
+                            <span>Ana Güç Tüketimi (Salon)</span>
+                        </div>
+                    </div>
+                    <span class="card-badge badge-success" id="badge_1">Aktif</span>
+                </div>
+                <div class="card-metrics">
+                    <div class="metric-box">
+                        <span class="metric-label">Anlık Akım</span>
+                        <div class="metric-value"><span id="val_1_akim">0</span><span class="metric-unit">mA</span></div>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Hesaplanan Güç</span>
+                        <div class="metric-value"><span id="val_1_guc">0</span><span class="metric-unit">W</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" id="card_2">
+                <div class="card-header">
+                    <div class="card-title-area">
+                        <div class="card-icon"><i class="fa-solid fa-door-open"></i></div>
+                        <div class="card-titles">
+                            <h3>İstasyon 2</h3>
+                            <span>Giriş Kapısı Güvenliği</span>
+                        </div>
+                    </div>
+                    <span class="card-badge badge-success" id="badge_2">Güvenli</span>
+                </div>
+                <div class="card-metrics">
+                    <div class="metric-box">
+                        <span class="metric-label">Kapı Pozisyonu</span>
+                        <div class="metric-value" style="font-size:1.5rem; font-weight:700;" id="val_2_kapi">KAPALI</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" id="card_3">
+                <div class="card-header">
+                    <div class="card-title-area">
+                        <div class="card-icon"><i class="fa-solid fa-fire-flame-simple"></i></div>
+                        <div class="card-titles">
+                            <h3>İstasyon 3</h3>
+                            <span>Mutfak Gaz & Yangın Güvenliği</span>
+                        </div>
+                    </div>
+                    <span class="card-badge badge-success" id="badge_3">Sorun Yok</span>
+                </div>
+                <div class="card-metrics">
+                    <div class="metric-box">
+                        <span class="metric-label">Gaz Seviyesi <small>(MQ-9)</small></span>
+                        <div class="metric-value"><span id="val_3_gaz">0</span><span class="metric-unit">ADC</span></div>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Alev Sensörü <small>(KY-026)</small></span>
+                        <div class="metric-value" style="font-size:1.25rem;" id="val_3_alev">YOK</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" id="card_4">
+                <div class="card-header">
+                    <div class="card-title-area">
+                        <div class="card-icon"><i class="fa-solid fa-temperature-half"></i></div>
+                        <div class="card-titles">
+                            <h3>İstasyon 4</h3>
+                            <span>Ortam Çevre Sensörleri</span>
+                        </div>
+                    </div>
+                    <span class="card-badge badge-success" id="badge_4">Stabil</span>
+                </div>
+                <div class="card-metrics">
+                    <div class="metric-box">
+                        <span class="metric-label">Ortam Sıcaklığı</span>
+                        <div class="metric-value"><span id="val_4_temp">24</span><span class="metric-unit">°C</span></div>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Bağıl Nem</span>
+                        <div class="metric-value"><span id="val_4_hum">45</span><span class="metric-unit">%</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mekatronik Mühendisliği Tasarım Projesi | Furkan KARSLI (21406601030)</p>
+    </footer>
+
+    <script>
+        // Sayfa yüklendiğinde
+        document.addEventListener('DOMContentLoaded', () => {
+            // Verileri düzenli çekmeye başla (1 saniye aralıkla)
+            setInterval(fetchData, 1000);
+        });
+
+        // Veritabanı / Flask API durumunu çek
+        function fetchData() {
+            fetch('/api/data')
+                .then(res => res.json())
+                .then(data => {
+                    updateUI(data);
+                })
+                .catch(err => console.error("Veri cekme hatasi:", err));
+        }
+
+        // Arayüz bileşenlerini güncelle
+        function updateUI(state) {
+            // İstasyon 1: Akım ve Güç
+            document.getElementById('val_1_akim').innerText = state.istasyon_1.akim_mA;
+            document.getElementById('val_1_guc').innerText = state.istasyon_1.guc_W;
+
+            // İstasyon 2: Kapı
+            document.getElementById('val_2_kapi').innerText = state.istasyon_2.kapi.toUpperCase();
+            
+            const badge2 = document.getElementById('badge_2');
+            const card2 = document.getElementById('card_2');
+            if (state.istasyon_2.kapi === 'acik') {
+                card2.classList.add('alert-fired');
+                badge2.innerText = 'AÇIK / ALARM';
+                badge2.className = 'card-badge badge-danger';
+            } else {
+                card2.classList.remove('alert-fired');
+                badge2.innerText = 'KAPALI';
+                badge2.className = 'card-badge badge-success';
+            }
+
+            // İstasyon 3: Gaz & Alev
+            document.getElementById('val_3_gaz').innerText = state.istasyon_3.gaz;
+            document.getElementById('val_3_alev').innerText = state.istasyon_3.alev === 1 ? "YANGIN!" : "YOK";
+            
+            const badge3 = document.getElementById('badge_3');
+            const card3 = document.getElementById('card_3');
+            if (state.istasyon_3.gaz >= state.istasyon_3.gaz_esik || state.istasyon_3.alev === 1) {
+                card3.classList.add('alert-fired');
+                badge3.innerText = 'TEHLİKE';
+                badge3.className = 'card-badge badge-danger';
+            } else {
+                card3.classList.remove('alert-fired');
+                badge3.innerText = 'SORUN YOK';
+                badge3.className = 'card-badge badge-success';
+            }
+
+            // İstasyon 4: Sıcaklık & Nem
+            document.getElementById('val_4_temp').innerText = state.istasyon_4.sicaklik_C.toFixed(1);
+            document.getElementById('val_4_hum').innerText = state.istasyon_4.nem_Yuzde.toFixed(1);
+
+            // Alarmlar ve Renklendirmeler
+            const alarmFired = state.merkezi_alarm === 'aktif';
+            const statusBadge = document.getElementById('systemStatusBadge');
+            const statusText = document.getElementById('systemStatusText');
+            const btnReset = document.getElementById('btnResetAlarm');
+            const heroTitle = document.getElementById('heroTitle');
+
+            if (alarmFired) {
+                statusBadge.classList.add('alert-active');
+                statusBadge.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> ACİL DURUM!';
+                btnReset.style.display = 'inline-flex';
+                heroTitle.innerText = '🚨 SİSTEM ALARM DURUMUNDA!';
+            } else {
+                statusBadge.classList.remove('alert-active');
+                statusBadge.innerHTML = '<i class="fa-solid fa-shield-check"></i> SİSTEM GÜVENLİ';
+                btnReset.style.display = 'none';
+                heroTitle.innerText = 'Yönetim Paneline Hoşgeldiniz';
+            }
+        }
+
+        function resetAlarm() {
+            postControl("alarm_sifirla", null);
+        }
+
+        // API'ye kontrol komutu yolla
+        function postControl(target, value, index = null) {
+            const payload = { target, value };
+            if (index !== null) payload.index = index;
+
+            fetch('/api/control', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'basarili') {
+                    updateUI(data.state);
+                }
+            })
+            .catch(err => console.error("Kontrol hatasi:", err));
+        }
+    </script>
+</body>
+</html>
