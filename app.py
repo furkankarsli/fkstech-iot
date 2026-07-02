@@ -32,7 +32,7 @@ system_state = {
     "merkezi_alarm": "pasif",
     
     # OLED Ekran Durumları (Web Kontrolü)
-    "oled_mod": "alfabe",    # "alfabe", "kapali", "mesaj"
+    "oled_mod": "alfabe",    # "alfabe" (varsayilan: isim ekrani), "kapali", "mesaj"
     "oled_mesaj": "Hazir"
 }
 
@@ -44,6 +44,9 @@ DB_FILE = "database.db"
 def init_db():
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
+    # WAL modu: yazma islemleri okumalari bloklamaz, disk yazma gecikmesi azalir
+    cursor.execute("PRAGMA journal_mode=WAL;")
+    cursor.execute("PRAGMA synchronous=NORMAL;")
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS sensor_logs (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -246,4 +249,6 @@ if __name__ == '__main__':
     print("Akilli Ev Projesi Yerel Sunucu Baslatiliyor...")
     print("Adres: http://127.0.0.1:5000")
     print("--------------------------------------------------")
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # threaded=True: ESP32 POST'u ile tarayici GET'i birbirini bloklamaz
+    # debug=False: reloader/debug ek yuku kaldirilir (uretim davranisi)
+    app.run(host='0.0.0.0', port=5000, debug=False, threaded=True)
