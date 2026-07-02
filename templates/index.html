@@ -5,31 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furkan Karslı - Bitirme Çalışması</title>
     <link rel="icon" type="image/png" href="/static/favicon.png">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         :root {
-            /* Humanized Production-Grade Dark Slate Theme */
             --bg-body: #0d1117;
             --bg-card: #161b22;
             --border-color: #30363d;
-            
+
             --text-main: #c9d1d9;
             --text-muted: #8b949e;
             --text-white: #f0f6fc;
-            
+
             --primary: #58a6ff;
             --primary-hover: #79c0ff;
-            
+
             --success: #3fb950;
             --warning: #d29922;
             --danger: #f85149;
             --neutral: #8b949e;
-            
+
             --radius-md: 8px;
             --radius-sm: 6px;
         }
@@ -47,10 +46,9 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow: hidden; /* Desktop üzerinde kaydırmayı engeller */
+            overflow: hidden;
         }
 
-        /* --- Header --- */
         header {
             height: 60px;
             background: var(--bg-card);
@@ -82,7 +80,6 @@
             align-items: center;
         }
 
-        /* --- Status Badge --- */
         .status-badge {
             display: inline-flex;
             align-items: center;
@@ -109,7 +106,6 @@
             gap: 0.75rem;
         }
 
-        /* --- Butonlar --- */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -134,15 +130,6 @@
             border-color: #8b949e;
         }
 
-        .btn-danger {
-            background-color: rgba(248, 81, 73, 0.15);
-            color: var(--danger);
-            border-color: rgba(248, 81, 73, 0.3);
-        }
-        .btn-danger:hover {
-            background-color: rgba(248, 81, 73, 0.25);
-        }
-
         .btn-secondary {
             background-color: #21262d;
             color: var(--text-main);
@@ -152,7 +139,6 @@
             background-color: #30363d;
         }
 
-        /* --- Main Layout --- */
         main {
             flex: 1;
             padding: 1.25rem;
@@ -165,7 +151,6 @@
             gap: 1rem;
         }
 
-        /* --- Dashboard Grid --- */
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -174,7 +159,6 @@
             overflow: hidden;
         }
 
-        /* --- Kart Yapısı --- */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -262,7 +246,6 @@
         .badge-danger { background-color: rgba(248, 81, 73, 0.1); color: #f43f5e; }
         .badge-neutral { background-color: rgba(139, 148, 158, 0.1); color: #8b949e; }
 
-        /* --- Metrik Kutuları --- */
         .card-metrics {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -308,7 +291,6 @@
             margin-left: 0.15rem;
         }
 
-        /* --- Toggle Switch UI --- */
         .switch-container {
             display: flex;
             align-items: center;
@@ -360,7 +342,6 @@
             background-color: var(--success);
         }
 
-        /* --- OLED Arayüz Bölümü --- */
         .oled-content {
             display: flex;
             flex-direction: column;
@@ -423,30 +404,48 @@
             border-color: var(--primary);
         }
 
-        /* --- Footer --- */
         footer {
-            height: 36px;
+            min-height: 36px;
             border-top: 1px solid var(--border-color);
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.3rem 0.9rem;
+            padding: 0.4rem 1rem;
             font-size: 0.75rem;
             color: var(--text-muted);
             background: var(--bg-card);
             flex-shrink: 0;
+            text-align: center;
         }
 
-        /* --- Mobil Tasarım (Kaydırmasız - 100vh Sığdırma) --- */
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-weight: 600;
+            transition: color 0.15s;
+        }
+        .footer-link:hover {
+            color: var(--primary);
+        }
+        .footer-link i {
+            font-size: 0.95rem;
+        }
+
         @media(max-width: 768px) {
             body {
                 height: auto;
                 min-height: 100vh;
-                overflow-y: auto; /* Telefonda dikey kaydırmaya izin ver */
+                overflow-y: auto;
             }
             header {
                 height: 50px;
                 padding: 0 0.75rem;
-                position: sticky; /* Kaydırırken başlık üstte kalsın */
+                position: sticky;
                 top: 0;
             }
             .logo {
@@ -464,69 +463,72 @@
                 font-size: 0.7rem;
             }
             main {
+                flex: none;
                 padding: 0.5rem;
-                gap: 0.75rem;
-                overflow: visible; /* İçerik taşarsa kaydırılabilsin */
+                gap: 0.5rem;
+                overflow: visible;
                 height: auto;
             }
             .dashboard-grid {
-                grid-template-columns: 1fr;   /* Tek sütun: kartlar alt alta sıralanır */
-                grid-template-rows: none;     /* Yükseklik içeriğe göre, sıkışma yok */
-                gap: 0.75rem;
+                grid-template-columns: 1fr;
+                grid-template-rows: none;
+                gap: 0.5rem;
                 flex: none;
                 overflow: visible;
             }
             .card {
-                padding: 0.75rem;
-                gap: 0.5rem;
+                padding: 0.6rem;
+                gap: 0.4rem;
             }
             .card-header {
-                padding-bottom: 0.4rem;
+                padding-bottom: 0.35rem;
             }
             .card-icon {
-                width: 30px;
-                height: 30px;
-                font-size: 0.95rem;
+                width: 28px;
+                height: 28px;
+                font-size: 0.9rem;
             }
             .card-titles h3 {
-                font-size: 0.85rem;
+                font-size: 0.8rem;
             }
             .card-titles span {
-                font-size: 0.65rem;
+                font-size: 0.62rem;
             }
             .card-badge {
                 font-size: 0.6rem;
                 padding: 0.1rem 0.4rem;
             }
             .card-metrics {
-                gap: 0.4rem;
+                gap: 0.35rem;
             }
             .metric-box {
-                padding: 0.4rem 0.6rem;
+                padding: 0.35rem 0.55rem;
             }
             .metric-label {
-                font-size: 0.6rem;
+                font-size: 0.58rem;
+                margin-bottom: 0.15rem;
             }
             .metric-value {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             .metric-unit {
-                font-size: 0.7rem;
+                font-size: 0.68rem;
             }
             .oled-content {
                 gap: 0.4rem;
             }
             .oled-mode-btn {
-                padding: 0.45rem;
-                font-size: 0.7rem;
+                padding: 0.4rem;
+                font-size: 0.68rem;
             }
             .oled-input {
                 padding: 0.45rem;
                 font-size: 0.75rem;
             }
             footer {
-                height: 28px;
-                font-size: 0.65rem;
+                font-size: 0.62rem;
+                gap: 0.2rem 0.7rem;
+                padding: 0.35rem 0.6rem;
             }
         }
     </style>
@@ -546,14 +548,12 @@
         </div>
         <div class="header-actions">
             <button class="btn btn-secondary" onclick="fetchData()"><i class="fa-solid fa-sync"></i> Yenile</button>
-            <button class="btn btn-danger" id="btnResetAlarm" style="display: none;" onclick="resetAlarm()"><i class="fa-solid fa-bell-slash"></i> Alarmı Sustur</button>
         </div>
     </header>
 
     <main>
         <div class="dashboard-grid">
-            
-            <!-- İSTASYON 1 CARD -->
+
             <div class="card" id="card_1">
                 <div class="card-header">
                     <div class="card-title-area">
@@ -565,7 +565,7 @@
                     </div>
                     <span class="card-badge badge-success" id="badge_1">Stabil</span>
                 </div>
-                
+
                 <div class="card-metrics">
                     <div class="metric-box">
                         <span class="metric-label">Sıcaklık</span>
@@ -586,7 +586,6 @@
                 </div>
             </div>
 
-            <!-- İSTASYON 2 CARD -->
             <div class="card" id="card_2">
                 <div class="card-header">
                     <div class="card-title-area">
@@ -598,7 +597,7 @@
                     </div>
                     <span class="card-badge badge-success" id="badge_2">Güvenli</span>
                 </div>
-                
+
                 <div class="card-metrics">
                     <div class="metric-box">
                         <span class="metric-label">Akım</span>
@@ -622,7 +621,6 @@
                 </div>
             </div>
 
-            <!-- OLED EKRAN KONTROL PANELİ -->
             <div class="card" id="card_oled">
                 <div class="card-header">
                     <div class="card-title-area">
@@ -633,17 +631,17 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="oled-content">
                     <div>
                         <div class="control-group-title">Ekran Çalışma Modu</div>
                         <div class="oled-mode-selector">
-                            <button class="oled-mode-btn" id="oled_mode_alfabe" onclick="setOledMode('alfabe')">Normal (Alfabe)</button>
+                            <button class="oled-mode-btn" id="oled_mode_alfabe" onclick="setOledMode('alfabe')">Normal</button>
                             <button class="oled-mode-btn" id="oled_mode_kapali" onclick="setOledMode('kapali')">Ekranı Kapat</button>
                             <button class="oled-mode-btn" id="oled_mode_mesaj" onclick="setOledMode('mesaj')">Özel Mesaj</button>
                         </div>
                     </div>
-                    
+
                     <div id="oledMessageForm" style="display: none; flex-direction: column; gap: 0.35rem;">
                         <div class="control-group-title">Ekrana Gönderilecek Mesaj (Max 16 Karakter)</div>
                         <div class="oled-message-input-area">
@@ -658,7 +656,9 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Mekatronik Mühendisliği Bitirme Çalışması | Furkan KARSLI (21406601030)</p>
+        <span>&copy; 2026 Mekatronik Mühendisliği Bitirme Çalışması | Furkan KARSLI</span>
+        <a class="footer-link" href="https://github.com/furkankarsli/fkstech-iot" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/furkankarsli/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
     </footer>
 
     <script>
@@ -670,23 +670,20 @@
             fetchData();
         });
 
-        // Durumu sunucudan çek
         function fetchData() {
             fetch('/api/data')
                 .then(res => res.json())
                 .then(data => {
                     updateUI(data);
                 })
-                .catch(err => console.error("Veri çekme hatası:", err));
+                .catch(err => console.error("Veri cekme hatasi:", err));
         }
 
-        // Arayüz bileşenlerini güncelle
         function updateUI(state) {
-            // İSTASYON 1 GÜNCELLEME (Ortam, Gaz, Alev)
             document.getElementById('val_1_temp').innerText = state.istasyon_1.sicaklik_C.toFixed(1);
             document.getElementById('val_1_hum').innerText = state.istasyon_1.nem_Yuzde.toFixed(1);
             document.getElementById('val_1_gaz').innerText = state.istasyon_1.gaz;
-            
+
             const isFlame = state.istasyon_1.alev === 1;
             const isGasDanger = state.istasyon_1.gaz >= state.istasyon_1.gaz_esik;
             document.getElementById('val_1_alev').innerText = isFlame ? "YANGIN!" : "YOK";
@@ -700,10 +697,10 @@
                 card1.classList.add('alert-fired');
                 badge1.innerText = 'TEHLİKE';
                 badge1.className = 'card-badge badge-danger';
-                
+
                 if (isGasDanger) boxGaz.classList.add('alert-metric');
                 else boxGaz.classList.remove('alert-metric');
-                
+
                 if (isFlame) boxAlev.classList.add('alert-metric');
                 else boxAlev.classList.remove('alert-metric');
             } else {
@@ -714,10 +711,9 @@
                 boxAlev.classList.remove('alert-metric');
             }
 
-            // İSTASYON 2 GÜNCELLEME (Giriş ve Enerji)
             document.getElementById('val_2_akim').innerText = state.istasyon_2.akim_mA.toFixed(1);
             document.getElementById('val_2_guc').innerText = state.istasyon_2.guc_W.toFixed(1);
-            
+
             const isDoorOpen = state.istasyon_2.kapi === 'acik';
             document.getElementById('val_2_kapi').innerText = isDoorOpen ? "AÇIK" : "KAPALI";
 
@@ -747,7 +743,6 @@
                 boxKapi.classList.remove('alert-metric');
             }
 
-            // OLED Arayüz Güncelleme
             currentOledMode = state.oled_mod;
             document.querySelectorAll('.oled-mode-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById(`oled_mode_${currentOledMode}`).classList.add('active');
@@ -762,48 +757,35 @@
                 msgForm.style.display = 'none';
             }
 
-            // Alarm Durumu ve Üst Banner
             const alarmFired = state.merkezi_alarm === 'aktif';
             const statusBadge = document.getElementById('systemStatusBadge');
-            const btnReset = document.getElementById('btnResetAlarm');
             const logoSpan = document.querySelector('.logo span');
 
             if (alarmFired) {
                 statusBadge.classList.add('alert-active');
                 statusBadge.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> ACİL DURUM!';
-                btnReset.style.display = 'inline-flex';
                 logoSpan.innerHTML = 'Furkan Karslı &mdash; <span style="color:var(--danger)">ALARM DURUMU!</span>';
             } else {
                 statusBadge.classList.remove('alert-active');
                 statusBadge.innerHTML = '<i class="fa-solid fa-shield-check"></i> SİSTEM GÜVENLİ';
-                btnReset.style.display = 'none';
                 logoSpan.innerHTML = 'Furkan Karslı &mdash; Bitirme Çalışması';
             }
         }
 
-        // Alarmı Sıfırla
-        function resetAlarm() {
-            postControl("alarm_sifirla", null);
-        }
-
-        // Güvenlik Modunu Değiştir
         function toggleSecurity() {
             const checked = document.getElementById('securitySwitch').checked;
             postControl("guvenlik", checked);
         }
 
-        // OLED Modunu Değiştir
         function setOledMode(mode) {
             postControl("oled_mod", mode);
         }
 
-        // OLED Mesajını Gönder
         function sendOledMessage() {
             const msg = document.getElementById('oledMessageInput').value;
             postControl("oled_mesaj", msg);
         }
 
-        // API'ye kontrol komutu yolla
         function postControl(target, value, index = null) {
             const payload = { target, value };
             if (index !== null) payload.index = index;
@@ -819,7 +801,7 @@
                     updateUI(data.state);
                 }
             })
-            .catch(err => console.error("Kontrol hatası:", err));
+            .catch(err => console.error("Kontrol hatasi:", err));
         }
     </script>
 </body>
