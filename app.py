@@ -106,44 +106,42 @@ load_state_from_db()
 
 def simulate_sensor_drift():
     def run_sim():
+        possible_metrics = ["sicaklik", "nem", "gaz", "akim"]
         while True:
-            time.sleep(1.5)
+            time.sleep(2.0)
             try:
-                # 1. Sıcaklık (23.2 C - 26.8 C arası mantıklı salınım)
-                curr_t = system_state["istasyon_1"]["sicaklik_C"]
-                delta_t = random.choice([-0.2, -0.1, 0.0, 0.1, 0.2])
-                new_t = round(max(23.2, min(26.8, curr_t + delta_t)), 1)
-                system_state["istasyon_1"]["sicaklik_C"] = new_t
+                # Her 2 saniyede rastgele 1 veya 2 metrik seçilip çok hafif değiştirilir
+                selected_metrics = random.sample(possible_metrics, k=random.randint(1, 2))
 
-                # 2. Nem (42.0% - 52.0% arası mantıklı salınım)
-                curr_h = system_state["istasyon_1"]["nem_Yuzde"]
-                delta_h = random.choice([-0.3, -0.1, 0.0, 0.1, 0.3])
-                new_h = round(max(42.0, min(52.0, curr_h + delta_h)), 1)
-                system_state["istasyon_1"]["nem_Yuzde"] = new_h
+                if "sicaklik" in selected_metrics:
+                    curr_t = system_state["istasyon_1"]["sicaklik_C"]
+                    delta_t = random.choice([-0.1, 0.1])
+                    system_state["istasyon_1"]["sicaklik_C"] = round(max(23.5, min(25.8, curr_t + delta_t)), 1)
 
-                # 3. Gaz ADC Seviyesi (108 - 148 ADC temiz hava)
-                curr_g = system_state["istasyon_1"]["gaz"]
-                delta_g = random.randint(-3, 3)
-                new_g = max(108, min(148, curr_g + delta_g))
-                system_state["istasyon_1"]["gaz"] = new_g
+                if "nem" in selected_metrics:
+                    curr_h = system_state["istasyon_1"]["nem_Yuzde"]
+                    delta_h = random.choice([-0.2, -0.1, 0.1, 0.2])
+                    system_state["istasyon_1"]["nem_Yuzde"] = round(max(43.0, min(48.0, curr_h + delta_h)), 1)
 
-                # 4. Röle Durumuna Göre Akım (mA) ve Güç (W) Salınımı
-                rele_on = system_state["istasyon_2"]["rele"] == "acik"
-                if rele_on:
+                if "gaz" in selected_metrics:
+                    curr_g = system_state["istasyon_1"]["gaz"]
+                    delta_g = random.choice([-2, -1, 1, 2])
+                    system_state["istasyon_1"]["gaz"] = max(112, min(135, curr_g + delta_g))
+
+                if "akim" in selected_metrics:
+                    rele_on = system_state["istasyon_2"]["rele"] == "acik"
                     curr_i = system_state["istasyon_2"]["akim_mA"]
-                    if curr_i < 100.0:
-                        curr_i = 440.0
-                    delta_i = random.uniform(-12.0, 12.0)
-                    new_i = round(max(390.0, min(490.0, curr_i + delta_i)), 1)
-                else:
-                    curr_i = system_state["istasyon_2"]["akim_mA"]
-                    if curr_i > 100.0:
-                        curr_i = 22.0
-                    delta_i = random.uniform(-1.5, 1.5)
-                    new_i = round(max(15.0, min(35.0, curr_i + delta_i)), 1)
+                    if rele_on:
+                        if curr_i < 100.0: curr_i = 430.0
+                        delta_i = random.uniform(-2.5, 2.5)
+                        new_i = round(max(410.0, min(460.0, curr_i + delta_i)), 1)
+                    else:
+                        if curr_i > 100.0: curr_i = 22.0
+                        delta_i = random.uniform(-0.5, 0.5)
+                        new_i = round(max(18.0, min(26.0, curr_i + delta_i)), 1)
 
-                system_state["istasyon_2"]["akim_mA"] = new_i
-                system_state["istasyon_2"]["guc_W"] = round((220.0 * new_i) / 1000.0, 2)
+                    system_state["istasyon_2"]["akim_mA"] = new_i
+                    system_state["istasyon_2"]["guc_W"] = round((220.0 * new_i) / 1000.0, 2)
 
                 alarm_denetimi()
             except Exception as e:
