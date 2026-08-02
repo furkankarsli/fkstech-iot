@@ -3,6 +3,9 @@ from flask_cors import CORS
 import sqlite3
 import json
 import os
+import threading
+import time
+import random
 from datetime import datetime
 
 app = Flask(__name__)
@@ -17,11 +20,11 @@ system_state = {
         "gaz_esik": 400
     },
     "istasyon_2": {
-        "akim_mA": 0.0,
-        "guc_W": 0.0,
+        "akim_mA": 420.0,
+        "guc_W": 92.4,
         "kapi": "kapali",
         "guvenlik_aktif": True,
-        "rele": "kapali"
+        "rele": "acik"
     },
     "led_status": ["kapali", "kapali", "kapali"],
     "merkezi_alarm": "pasif",
@@ -30,7 +33,6 @@ system_state = {
 }
 
 API_KEY = "tasarim_projesi_secret_key"
-
 DB_FILE = "database.db"
 
 def init_db():
@@ -102,6 +104,54 @@ def log_sensor_data(istasyon_id, data):
 init_db()
 load_state_from_db()
 
+def simulate_sensor_drift():
+    def run_sim():
+        while True:
+            time.sleep(1.5)
+            try:
+                # 1. Sıcaklık (23.2 C - 26.8 C arası mantıklı salınım)
+                curr_t = system_state["istasyon_1"]["sicaklik_C"]
+                delta_t = random.choice([-0.2, -0.1, 0.0, 0.1, 0.2])
+                new_t = round(max(23.2, min(26.8, curr_t + delta_t)), 1)
+                system_state["istasyon_1"]["sicaklik_C"] = new_t
+
+                # 2. Nem (42.0% - 52.0% arası mantıklı salınım)
+                curr_h = system_state["istasyon_1"]["nem_Yuzde"]
+                delta_h = random.choice([-0.3, -0.1, 0.0, 0.1, 0.3])
+                new_h = round(max(42.0, min(52.0, curr_h + delta_h)), 1)
+                system_state["istasyon_1"]["nem_Yuzde"] = new_h
+
+                # 3. Gaz ADC Seviyesi (108 - 148 ADC temiz hava)
+                curr_g = system_state["istasyon_1"]["gaz"]
+                delta_g = random.randint(-3, 3)
+                new_g = max(108, min(148, curr_g + delta_g))
+                system_state["istasyon_1"]["gaz"] = new_g
+
+                # 4. Röle Durumuna Göre Akım (mA) ve Güç (W) Salınımı
+                rele_on = system_state["istasyon_2"]["rele"] == "acik"
+                if rele_on:
+                    curr_i = system_state["istasyon_2"]["akim_mA"]
+                    if curr_i < 100.0:
+                        curr_i = 440.0
+                    delta_i = random.uniform(-12.0, 12.0)
+                    new_i = round(max(390.0, min(490.0, curr_i + delta_i)), 1)
+                else:
+                    curr_i = system_state["istasyon_2"]["akim_mA"]
+                    if curr_i > 100.0:
+                        curr_i = 22.0
+                    delta_i = random.uniform(-1.5, 1.5)
+                    new_i = round(max(15.0, min(35.0, curr_i + delta_i)), 1)
+
+                system_state["istasyon_2"]["akim_mA"] = new_i
+                system_state["istasyon_2"]["guc_W"] = round((220.0 * new_i) / 1000.0, 2)
+
+                alarm_denetimi()
+            except Exception as e:
+                print(f"Simulation error: {e}")
+
+    thread = threading.Thread(target=run_sim, daemon=True)
+    thread.start()
+
 def alarm_denetimi():
     alarm = False
     if system_state["istasyon_1"]["gaz"] >= system_state["istasyon_1"]["gaz_esik"]:
@@ -111,6 +161,8 @@ def alarm_denetimi():
     if system_state["istasyon_2"]["guvenlik_aktif"] and system_state["istasyon_2"]["kapi"] == "acik":
         alarm = True
     system_state["merkezi_alarm"] = "aktif" if alarm else "pasif"
+
+simulate_sensor_drift()
 
 @app.route('/')
 def home():
