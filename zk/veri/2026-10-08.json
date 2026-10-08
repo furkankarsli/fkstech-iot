@@ -1,0 +1,1047 @@
+{
+ "tarih": "2026-10-08",
+ "guncelleme": "2026-10-08T22:45:10+00:00",
+ "markalar": [
+  {
+   "marka": "TokenFlex",
+   "appstore": {
+    "puan": 4.48,
+    "oy": 1269,
+    "surum": "3.6.2",
+    "guncelleme": "2026-07-28"
+   },
+   "play": {
+    "puan": 4.62,
+    "oy": 1187,
+    "yorum": 192,
+    "indirme": "100.000+",
+    "surum": "3.6.2"
+   },
+   "sikayetvar": {
+    "url": "https://www.sikayetvar.com/token-flex",
+    "sikayet_tum": 88,
+    "cozulen_tum": 59,
+    "cozum_orani_tum": 88,
+    "sikayet_1ay": 2,
+    "cozulen_1ay": 2,
+    "cozum_orani_1ay": 100,
+    "sikayet_1yil": 19,
+    "cozulen_1yil": 16,
+    "cozum_orani_1yil": 89
+   },
+   "kampanyalar": [
+    {
+     "baslik": "Erdal Erzincan Konserinde İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/biletix-erzincanli"
+    },
+    {
+     "baslik": "TokenFlex ile FlexPuan Kampanyası",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/flexpuan"
+    },
+    {
+     "baslik": "TokenFlex kullanıcılarına özel Arçelik'te İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/arcelik"
+    },
+    {
+     "baslik": "TokenFlex kullanıcılarına özel Beko ürünlerinde indirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/beko"
+    },
+    {
+     "baslik": "TokenFlex'e özel The DJ Blaze Sette İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/biletix-dj-blaze"
+    },
+    {
+     "baslik": "TokenFlex Kullanıcılarına Özel KAFT Tasarım Ürünlerinde İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/kaft"
+    },
+    {
+     "baslik": "TokenFlex Kullanıcılarına Özel Tüm Nex360 Bakım Paketlerinde İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/nethouse-360"
+    },
+    {
+     "baslik": "TokenFlex kullanıcılarına özel Sosyopix'te İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/sosyopix"
+    },
+    {
+     "baslik": "Flo Online'da İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/flo-online"
+    },
+    {
+     "baslik": "TokenFlex'e özel Gallery Crystal İndirimi!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/gallery-crystal"
+    },
+    {
+     "baslik": "BinBin Taksi Yolculuklarında İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/bibin-taksi"
+    },
+    {
+     "baslik": "TokenFlex kullanıcılarına özel Gülsha'da İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/gulsha"
+    },
+    {
+     "baslik": "TokenFlex kullanıcılarına özel, Gourmet Garage'da İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/gourmet"
+    },
+    {
+     "baslik": "ReyonPlus'ta İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/reyonplus"
+    },
+    {
+     "baslik": "Raunt'ta İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/sebit-raunt"
+    },
+    {
+     "baslik": "Vitamin Eğitim'de İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/vitamin-egitim"
+    },
+    {
+     "baslik": "Hızlıgo'da İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/hizli-go"
+    },
+    {
+     "baslik": "Sbarro'da TokenFlex'e Özel Fırsat!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/sbarro"
+    },
+    {
+     "baslik": "Tazedirekt’te İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/taze-direkt"
+    },
+    {
+     "baslik": "Civil Mağazalarında İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/civil"
+    },
+    {
+     "baslik": "TokenFlex kullanıcılarına özel İndirim Macroonline’da! İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/macronline"
+    },
+    {
+     "baslik": "Subway’de TokenFlex’e Özel Fırsat!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/subway"
+    },
+    {
+     "baslik": "Praticar’da Araç kiralama Hizmetlerinde İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/praticar"
+    },
+    {
+     "baslik": "BinBin Scooter Yolculuklarında İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/binbin-scooter"
+    },
+    {
+     "baslik": "Garenta'da Araç Kiralama Hizmetlerinde İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/garenta"
+    },
+    {
+     "baslik": "Flo Mağazalarında İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/flo-2-magaza"
+    },
+    {
+     "baslik": "Biletix Etkinliklerinde İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/biletix"
+    },
+    {
+     "baslik": "Revogo'da İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/regovo"
+    },
+    {
+     "baslik": "Suco Mataralarında İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/suco"
+    },
+    {
+     "baslik": "Yuvadan.com'da Tüm Randevu Paketlerinde Geçerli İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/yuvadan"
+    },
+    {
+     "baslik": "Getir Market'te İlk Siparişine İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/getir-market"
+    },
+    {
+     "baslik": "King Küçük Ev Aletlerinde İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/king"
+    },
+    {
+     "baslik": "Kartal Yuvası’nda Taraftarlara Özel İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/kartal-yuvasi"
+    },
+    {
+     "baslik": "10Hani’de İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/10hani"
+    },
+    {
+     "baslik": "Ulysses Zeytinyağı Ürünlerinde İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/ulysses-zeytinyagi"
+    },
+    {
+     "baslik": "Hardline Naturals'ta İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/hardline-natural"
+    },
+    {
+     "baslik": "Hardline Nutrition’da İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/hardline-nutrition"
+    },
+    {
+     "baslik": "Patili Dostlara Özel Mind The Mod’da İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/mindtomod"
+    },
+    {
+     "baslik": "Palazet’te İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/palaz-et"
+    },
+    {
+     "baslik": "Soul Kitchen Organik Ürünler'de İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/soul-kitchen-1c72b9491fa6c46aec34207994020836"
+    },
+    {
+     "baslik": "Torq Nutrition’da İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/torq-nutrition"
+    },
+    {
+     "baslik": "Usmar Market'te İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/usmar-market"
+    },
+    {
+     "baslik": "Franua’da İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/franua"
+    },
+    {
+     "baslik": "Mardin Kapımda’da İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/mardin-kapimda"
+    },
+    {
+     "baslik": "Sadık Amca'da İndirim Fırsatı",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/sadik-amca"
+    },
+    {
+     "baslik": "BonaLiva’da La Roche Posay Ürünlerinde Avantaj!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/bonaliva-la-roche"
+    },
+    {
+     "baslik": "Exxen'de Hediye Abonelik",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/exxen"
+    },
+    {
+     "baslik": "Fellas'ta Lezzet Dolu İndirim",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/fellas"
+    },
+    {
+     "baslik": "NovaKid’te İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/novakid"
+    },
+    {
+     "baslik": "Pazarama Plus Üyeliği Hediye!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/pazarama-plus"
+    },
+    {
+     "baslik": "Nota Çiçek’te Bahar İndirimi",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/nota-cicek"
+    },
+    {
+     "baslik": "SlimPlus’ta İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/slim-plus"
+    },
+    {
+     "baslik": "Uber Taksi Yolculuğunda Fırsat!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/uber"
+    },
+    {
+     "baslik": "Opet’te TokenFlex’le Molaya Lezzet Kat",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/opet-fasty"
+    },
+    {
+     "baslik": "Koçtaş’ta İndirimle Evini Yenile!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/koctasta-indirimle-evini-yenile"
+    },
+    {
+     "baslik": "Pazarama'da 150 TL İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/pazarama"
+    },
+    {
+     "baslik": "Bambu Çiçek’te İndirim",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/bambu-cicek"
+    },
+    {
+     "baslik": "Hotiç’le Tarzını Yansıt",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/hotic"
+    },
+    {
+     "baslik": "Nethouse'ta TokenFlex'lilere Özel İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/nethouse-indirim"
+    },
+    {
+     "baslik": "Aygaz'da İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/aygaz-10"
+    },
+    {
+     "baslik": "EasyCep'te Büyük Fırsat",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/easycep"
+    },
+    {
+     "baslik": "BonaLiva ile Suda'da Avantaj!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/bonaliva-suda-mayis"
+    },
+    {
+     "baslik": "EasyCep Buyback Ayrıcalığı",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/easycep-buyback"
+    },
+    {
+     "baslik": "Servis Plan ile Periyodik Bakım Avantajı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/servisplan-periyodik-bakim-paketi"
+    },
+    {
+     "baslik": "Servis Plan ile 1 Adet Oto Yıkama Hediye!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/servisplan-oto-yikama"
+    },
+    {
+     "baslik": "Servis Plan ile Lastik Değişimi Avantajı",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/servis-plan-lastik-degisimi"
+    },
+    {
+     "baslik": "Caribou Lezzeti TokenFlex'le!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/caribou"
+    },
+    {
+     "baslik": "SushiCo Lezzet Kampanyası",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/sushico"
+    },
+    {
+     "baslik": "Dardenia ve I Love Fish'te İndirimli TokenFlex'leyin!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/dardenia-i-love-fish-yuzde-10-indirim"
+    },
+    {
+     "baslik": "Saloon Burger'de Doyasıya İndirim",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/saloonburger"
+    },
+    {
+     "baslik": "Classest’te Özel Derslerde İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/classest"
+    },
+    {
+     "baslik": "Pizza Lazza'da Lezzet Dolu İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/pizza-lazza-tokenflexmenu"
+    },
+    {
+     "baslik": "ÖzelBeslenme.com'da Özel Fırsat!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/ozel-beslenme"
+    },
+    {
+     "baslik": "Peynircibaba’da Lezzet Dolu İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/peynirci-baba"
+    },
+    {
+     "baslik": "Enavm’de İndirimli Alışveriş!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/enavm"
+    },
+    {
+     "baslik": "Tazemasa.com’da İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/taptaze-indirimleri-tazemasacomda-tokenflexle"
+    },
+    {
+     "baslik": "Gurmelere Özel Kampanya!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/gurmelere-ozel-kampanya"
+    },
+    {
+     "baslik": "Zeytin Ana'dan Yöresel ve Doğal Lezzetler!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/zeytin-anadan-yoresel-ve-dogal-lezzetler"
+    },
+    {
+     "baslik": "Otokoç Sigorta’dan Kasko ve Trafik Sigortası Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/otokoc-sigorta"
+    },
+    {
+     "baslik": "Yunan Adaları'nı İndirimli Keşfet!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/obilet-feribot"
+    },
+    {
+     "baslik": "Obilet’te Araç Kiralamada İndirim",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/obilet-avantajli-arac-kiralama"
+    },
+    {
+     "baslik": "Hop ile Şehrin Keyfini Sür",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/hop"
+    },
+    {
+     "baslik": "Budget'la Yola Avantajlı Çık!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/budget"
+    },
+    {
+     "baslik": "Zuppin ile Şehir İçi & Havalimanı Ulaşımında Fırsat",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/zuppin"
+    },
+    {
+     "baslik": "Yoyo ile Avantajlı Yolculuk",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/drive-yoyo"
+    },
+    {
+     "baslik": "Rabam'da Araç Bakım İndirimi",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/rabam-bakim"
+    },
+    {
+     "baslik": "Rabam'da Ekspertiz Fırsatı",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/rabam-ekspertiz"
+    },
+    {
+     "baslik": "Servis Plan EVbee ile Yolda Kalma!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/servisplan-evbee"
+    },
+    {
+     "baslik": "EduGo'Da İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/edugo"
+    },
+    {
+     "baslik": "EğitimHub'ta İndirim",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/egitimhub"
+    },
+    {
+     "baslik": "CedGo'da Çocuklar için Eğlence Zamanı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/cedgo"
+    },
+    {
+     "baslik": "Mr Usta'da İndirimli Klima Hizmeti",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/mrusta-klima"
+    },
+    {
+     "baslik": "Mr Usta ile Taşınma Hizmetlerinde İndirim",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/mrusta-tasinma"
+    },
+    {
+     "baslik": "OxfordKids'te İndirim",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/oxfordkids"
+    },
+    {
+     "baslik": "eSIMbooking ile Seyahatlerinizde Ayrıcalık",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/esim-booking"
+    },
+    {
+     "baslik": "Online Lostra ile Yenilenen Ayakkabılar",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/online-lostra"
+    },
+    {
+     "baslik": "Otorapor'da Avantajlı Paketler",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/otorapor"
+    },
+    {
+     "baslik": "Birebir Almanca'da İndirim",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/birebir-almanca"
+    },
+    {
+     "baslik": "Hediye Sepetinde Büyük Fırsat!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/hediye-sepeti"
+    },
+    {
+     "baslik": "Hızlı Çiçek'te İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/hizli-cicek"
+    },
+    {
+     "baslik": "Birebir İngilizce'de İndirim",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/birebir-ingilizce"
+    },
+    {
+     "baslik": "Era Koleji'nde Avantaj!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/era-koleji"
+    },
+    {
+     "baslik": "Gen Koleji'nde İndirim Fırsatı",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/gen-koleji"
+    },
+    {
+     "baslik": "İzmir Canadian Koleji'nde Eğitim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/izmir-canadian-koleji"
+    },
+    {
+     "baslik": "MBA Okulları’nda Fırsat",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/mba-okullarinda-indirim"
+    },
+    {
+     "baslik": "Nazmi Arıkan Fen Bilimleri'nde Eğitim Avantajı",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/nazmi-arikan-fen-bilimleri-okullari"
+    },
+    {
+     "baslik": "Özel Teb Okulları'nda İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/teb-okullari"
+    },
+    {
+     "baslik": "Servis Plan ile Elektrikli Araçlara Özel Ayrıcalıklı Üyelik",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/servisplan-elektrikliarac"
+    },
+    {
+     "baslik": "Mobilya ve Montaj TokenFlex'le Daha Kolay!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/mrusta-mobilya"
+    },
+    {
+     "baslik": "TokenFlex'le Kuru Temizlemede Avantaj!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/mr-usta-kuru-temizleme"
+    },
+    {
+     "baslik": "Mr Usta'da Koltuk & Halı Yıkamada Avantaj!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/mrusta-koltuk-yikama"
+    },
+    {
+     "baslik": "CarrefourSA Online Market’te İlk Siparişine Özel İndirim Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/carrefour"
+    },
+    {
+     "baslik": "TokenFlex’le Uçuş Keyfi",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/obilet-avantajli-ucus"
+    },
+    {
+     "baslik": "Biletini Al, Eğlenceyi Kaçırma!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/biletinial"
+    },
+    {
+     "baslik": "Muhiku'dan Mutlu Hissettiren Hediyeler",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/muhiku"
+    },
+    {
+     "baslik": "Flalingo ile İngilizce Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/flalingo"
+    },
+    {
+     "baslik": "BiletimGO ile Eğlence Vakti!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/biletimgo"
+    },
+    {
+     "baslik": "Tiyatro Keyfi thehouseseat’te Başlıyor",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/thehouseseat"
+    },
+    {
+     "baslik": "Rabam’da TokenFlex’lilere Özel İndirim",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/rabam"
+    },
+    {
+     "baslik": "Oksijen’de Avantajlı Abonelik!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/oksijen-gazetesi"
+    },
+    {
+     "baslik": "Mucit Panda ile Oyun Dolu Sonbahar!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/mucit-panda"
+    },
+    {
+     "baslik": "Sporseverleri Sevindiren Kampanya",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/sporseverleri-sevindiren-kampanya"
+    },
+    {
+     "baslik": "HiDoctor’la Kendine İyi Bak!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/hidoctor-ile-kendine-iyi-bak"
+    },
+    {
+     "baslik": "Obilet'te Tatil Fırsatı!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/bir-tatili-hak-etmedin-mi"
+    },
+    {
+     "baslik": "Seçili Final Okulları Kayıtlarında İndirim!",
+     "link": "https://www.tokenflex.com.tr/kampanyalar/yakacik-final-okullari"
+    }
+   ],
+   "kampanya_kaynagi": "https://www.tokenflex.com.tr/kampanyalar"
+  },
+  {
+   "marka": "Setcard",
+   "appstore": {
+    "puan": 4.58,
+    "oy": 14611,
+    "surum": "5.2.16",
+    "guncelleme": "2026-08-25"
+   },
+   "play": {
+    "puan": 4.64,
+    "oy": 12527,
+    "yorum": 1556,
+    "indirme": "1.000.000+",
+    "surum": "Varies with device"
+   },
+   "sikayetvar": {
+    "url": "https://www.sikayetvar.com/setcard",
+    "sikayet_tum": 303,
+    "cozulen_tum": 59,
+    "cozum_orani_tum": 45,
+    "sikayet_1ay": 5,
+    "cozulen_1ay": 2,
+    "cozum_orani_1ay": 67,
+    "sikayet_1yil": 107,
+    "cozulen_1yil": 17,
+    "cozum_orani_1yil": 41
+   },
+   "kampanyalar": [
+    {
+     "baslik": "SETCARD x SHOP&MILES iş birliği ile Millerinizi tüm Türkiye’de binlerce noktada harcayın!",
+     "link": "https://www.setcard.com.tr/kampanyalar/setcard-miles-smiles-is-birligi-ile-milleriniz-bakiyeye-donusuyor"
+    },
+    {
+     "baslik": "Flexlife bakiyenizle Panço'da %10 kartınıza iade fırsatı!",
+     "link": "https://www.setcard.com.tr/kampanyalar/flexlife-bakiyenizle-pancoda-10-kartiniza-iade-firsati"
+    },
+    {
+     "baslik": "Setcard ile 250 TL ve üzeri alışverişlerde tazemasa.com' da anında 50 TL indirim",
+     "link": "https://www.setcard.com.tr/kampanyalar/setcard-ile-250-tl-ve-uzeri-alisverislerde-tazemasacom-da-aninda-50-tl-indirim"
+    },
+    {
+     "baslik": "Setcard kurumsal müşterilerine özel Peoplise insan kaynakları çözümlerinde %20 indirim",
+     "link": "https://www.setcard.com.tr/kampanyalar/setcard-uye-isletmelere-ozel-peoplise-insan-kaynaklari-cozumlerinde-20-indirim"
+    },
+    {
+     "baslik": "Setcard üye işletmelere özel Logo Gastropos kafe ve restoran yönetimi yazılım çözümünde %20 İndirim",
+     "link": "https://www.setcard.com.tr/kampanyalar/setcard-uye-isletmelere-ozel-logo-gastropos-kafe-ve-restoran-yonetimi-yazilim-cozumunde-20-indirim"
+    },
+    {
+     "baslik": "SETCARD Hasat Sepetinde kazandırıyor",
+     "link": "https://www.setcard.com.tr/kampanyalar/setcard-hasat-sepetinde-kazandiriyor"
+    },
+    {
+     "baslik": "SETCARD müşterilerine özel Peynirci Baba online satışta %10 indirim",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-musterilerine-ozel-peynirci-baba-online-satista-10-indirim"
+    },
+    {
+     "baslik": "Güzel Gıda siparişlerinizde tüm indirimlere ek %5 indirim",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/guzel-gida-siparislerinizde-tum-indirimlere-ek-5-indirim"
+    },
+    {
+     "baslik": "Setcard Üye İşletmelere Özel Akınsoft ürünlerinde %10 İndirim",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-uye-isletmelere-ozel-akinsoft-urunlerinde-10-indirim"
+    },
+    {
+     "baslik": "Setcard'ınız ile Mopaş Marketlerde Alışveriş Yapabilirsiniz!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcardiniz-ile-mopas-marketlerde-alisveris-yapabilirsiniz"
+    },
+    {
+     "baslik": "Setcard ile Ekomar Marketin Whatsapp sipariş hattından hızlı alışveriş imkanı!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-ile-ekomar-marketin-whatsapp-siparis-hattindan-hizli-alisveris-imkani"
+    },
+    {
+     "baslik": "Kampanyalar - Setcard",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/?page=1"
+    },
+    {
+     "baslik": "Kampanyalar - Setcard",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/?page=2"
+    },
+    {
+     "baslik": "Kampanyalar - Setcard",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/?page=3"
+    },
+    {
+     "baslik": "Kampanyalar - Setcard",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/?page=4"
+    },
+    {
+     "baslik": "Kampanyalar - Setcard",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/?page=5"
+    },
+    {
+     "baslik": "Setcard ile KİM Market'ten Alışveriş Yapmak Çok Kolay!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-ile-kim-marketten-alisveris-yapmak-cok-kolay"
+    },
+    {
+     "baslik": "Setcard'ınız ile Seç Marketlerde Alışveriş Yapabilirsiniz!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcardiniz-ile-sec-marketlerde-alisveris-yapabilirsiniz"
+    },
+    {
+     "baslik": "10 Şubat – 31 Mart tarihleri arasında Mizalle.com üzerinden yapacağınız tüm alışverişlerde anında %15 İndirim!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/10-subat-31-mart-2020-tarihleri-arasinda-mizallecom-uzerinden-yapacaginiz-tum-alisverislerde-aninda-15-indirim-sizi-bekliyor"
+    },
+    {
+     "baslik": "SETCARD , MEKAN KÖZDE DÖNER’DE YAPACAĞIN HER HARCAMA İÇİN %15 SETPARA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-mekan-kozde-donerde-yapacagin-her-harcama-icin-15-setpara-kazandiriyor"
+    },
+    {
+     "baslik": "SETCARD SAMSUN’DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/lezzet-i-ikram-doner-salonu-vm-cafe-capanoglu-pide-salonu-pide-55-ulu-et-lokantasinda-ayni-ay-icerisinde-yapacagin-harcamalardan-kazanacagin-10-setpara-aninda-hesabinizda"
+    },
+    {
+     "baslik": "Kampanyalar - Setcard",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/?page=6"
+    },
+    {
+     "baslik": "SETCARD KÜTAHYA’DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/camlica-yemekde-ayni-ay-icerisinde-yapacagin-harcamalardan-kazanacagin-10-setpara-aninda-hesabinizda"
+    },
+    {
+     "baslik": "SETCARD KOCAELİ’DE KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/biftek-33-tantuni-donerci-mehmet-usta-hilton-garden-inn-osmanli-kebap-ve-nikriz-de-ayni-ay-icerisinde-yapacagin-harcamalardan-kazanacagin-10-setpara-aninda-hesabinizda"
+    },
+    {
+     "baslik": "SETCARD İZMİR’DE KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-izmirde-kazandiriyor-anlasmali-setpara-noktalarinda-ayni-ay-icerisinde-yapacagin-harcamalardan-kazanacagin-10-setpara-aninda-hesabinizda"
+    },
+    {
+     "baslik": "SETCARD TEKİRDAĞ’DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-tekirdagda-da-kazandiriyor-prestij-pizza-hamburger-valide-sultan-sark-sofrasi-tavukhaneda-ayni-ay-icerisinde-yapacagin-harcamalardan-kazanacagin-10-setpara-aninda-hesabinizda"
+    },
+    {
+     "baslik": "SETCARD ELAZIĞ’DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-elazigda-da-kazandiriyor-lahmacuncuda-ayni-ay-icerisinde-yapacagin-harcamalardan-kazanacagin-10-setpara-aninda-hesabinizda"
+    },
+    {
+     "baslik": "Kampanyalar - Setcard",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/?page=7"
+    },
+    {
+     "baslik": "SETCARD EDİRNE’DE KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-edirnede-de-kazandiriyor-citir-usta-ve-hot-pointte-ayni-ay-icerisinde-yapacagin-harcamalardan-kazanacagin-10-setpara-aninda-hesabinizda"
+    },
+    {
+     "baslik": "SETCARD SAKARYA’DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-sakaryada-kazandiriyor-rodi-burger-ve-pizza-bursa-kebap-evinde-ayni-ay-icerisinde-yapacagin-harcamalardan-kazanacagin-10-setpara-aninda-hesabinizda"
+    },
+    {
+     "baslik": "SETCARD RİZE’DE KAZANDIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-rizede-kazandiriyor-reyhan-bufe-durak-lokantasinda-ayni-ay-icerisinde-yapacagin-harcamalardan-kazanacagin-10-setpara-aninda-hesabinizda"
+    },
+    {
+     "baslik": "SETCARD MERSİN'DE KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-mersinde-kazandiriyor-nobel-oteln-cafe-unluoglu-kent-corba-ve-deryanin-mutfaginda-ayni-ay-icerisinde-yapacagin-harcamalardan-kazanacagin-10-setpara-aninda-hesabinizda"
+    },
+    {
+     "baslik": "SETCARD ÇANAKKALE'DE KAZANDIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-canakkalede-kazandiriyor-akava-restaurant-gonul-kahvesi-gocebe-lokantasi-ve-beyhan-sofrasinda-ayni-ay-icerisinde-yapacagin-harcamalardan-kazanacagin-10-setpara-aninda-hesabinizda"
+    },
+    {
+     "baslik": "Kampanyalar - Setcard",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/?page=8"
+    },
+    {
+     "baslik": "SETCARD BOLU'DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-bolunun-enfes-lezzetlerinde-setpara-kazandiriyor"
+    },
+    {
+     "baslik": "SETCARD MALATYA'DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/malatyanin-lezzetli-sofralarindan-kalkmak-zor-ama-setpara-kazanmak-cok-kolay"
+    },
+    {
+     "baslik": "SETCARD KONYA’DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-konyada-kazandiriyor-asya-lahmacun"
+    },
+    {
+     "baslik": "Islak hamburger denildiğinde akla ilk gelen marka Kızılkayalar, Setcard’lılara %10 Setpara kazandırıyor!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/islak-hamburger-denildiginde-akla-ilk-gelen-marka-kizilkayalar-setcardlilara-10-setpara-kazandiriyor"
+    },
+    {
+     "baslik": "SETCARD BURSA'DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/bursanin-nefis-lezzetleriyle-setpara-keyfi"
+    },
+    {
+     "baslik": "SETCARD TRABZON'DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/trabzonun-unlu-lezzetleri-setpara-kazandiyor"
+    },
+    {
+     "baslik": "SETCARD MANİSA'DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-manisada-kazandiriyor"
+    },
+    {
+     "baslik": "SETCARD DENİZLİ'DE KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-denizlide-kazandiriyor"
+    },
+    {
+     "baslik": "SETCARD ESKİŞEHİR'DE KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcardlilar-eskisehirde-10-setpara-kazaniyor"
+    },
+    {
+     "baslik": "SETCARD MUĞLA'DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-muglada-kazandiriyor"
+    },
+    {
+     "baslik": "Dünya Çikolata Günü'nün Tatlı Sürprizi",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/dunya-cikolata-gununuz-kutlu-olsun-mabel-cikolata"
+    },
+    {
+     "baslik": "SETCARD ANTALYA'DA KAZANDIRIYOR!",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/setcard-antalyada-kazandiriyor"
+    },
+    {
+     "baslik": "Kampanyalar - Setcard",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/?page=10"
+    },
+    {
+     "baslik": "Kampanyalar - Setcard",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/?page=9"
+    },
+    {
+     "baslik": "Kampanyalar - Setcard",
+     "link": "https://www.setcard.com.tr/kampanyalar/kampanyalar/?page=11"
+    }
+   ],
+   "kampanya_kaynagi": "https://www.setcard.com.tr/kampanyalar"
+  },
+  {
+   "marka": "iWallet",
+   "appstore": {
+    "puan": 4.39,
+    "oy": 1311,
+    "surum": "4.1.2",
+    "guncelleme": "2026-08-28"
+   },
+   "play": {
+    "puan": 4.25,
+    "oy": 2538,
+    "yorum": 682,
+    "indirme": "100.000+",
+    "surum": "4.1.2"
+   },
+   "sikayetvar": {
+    "url": "https://www.sikayetvar.com/iwallet",
+    "sikayet_tum": 156,
+    "cozulen_tum": 38,
+    "cozum_orani_tum": 46,
+    "sikayet_1ay": 0,
+    "cozulen_1ay": 0,
+    "cozum_orani_1ay": 0,
+    "sikayet_1yil": 49,
+    "cozulen_1yil": 18,
+    "cozum_orani_1yil": 69
+   },
+   "kampanyalar": null,
+   "kampanya_kaynagi": null
+  },
+  {
+   "marka": "Moneypay / Migros Money",
+   "appstore": {
+    "puan": 4.78,
+    "oy": 54514,
+    "surum": "6.3.1",
+    "guncelleme": "2026-09-22"
+   },
+   "play": {
+    "puan": 4.62,
+    "oy": 30270,
+    "yorum": 9720,
+    "indirme": "1.000.000+",
+    "surum": "6.3.1"
+   },
+   "sikayetvar": {
+    "url": "https://www.sikayetvar.com/moneypay",
+    "sikayet_tum": 3509,
+    "cozulen_tum": 645,
+    "cozum_orani_tum": 42,
+    "sikayet_1ay": 43,
+    "cozulen_1ay": 9,
+    "cozum_orani_1ay": 50,
+    "sikayet_1yil": 532,
+    "cozulen_1yil": 137,
+    "cozum_orani_1yil": 54
+   },
+   "kampanyalar": [
+    {
+     "baslik": "350 TL ve katları NIVEA Deodorant Alışverişine 1 Çekiliş Hakkı!",
+     "link": "https://www.money.com.tr/Kampanyalar/Detay/cms/350-tl-ve-katlari-nivea-deodorant-alisverisine-1-cekilis-hakki/6793"
+    },
+    {
+     "baslik": "450 TL ve katları Rinso Alışverişine 1 Çekiliş Hakkı!",
+     "link": "https://www.money.com.tr/Kampanyalar/Detay/cms/450-tl-ve-katlari-rinso-alisverisine-1-cekilis-hakki/6792"
+    },
+    {
+     "baslik": "75 TL ve katları Sürmix Alışverişine 1 Çekiliş Hakkı!",
+     "link": "https://www.money.com.tr/Kampanyalar/Detay/cms/75-tl-ve-katlari-surmix-alisverisine-1-cekilis-hakki/6794"
+    },
+    {
+     "baslik": "750 TL ve Katları Jacobs Alışverişine 1 Çekiliş Hakkı!",
+     "link": "https://www.money.com.tr/Kampanyalar/Detay/cms/750-tl-ve-katlari-jacobs-alisverisine-1-cekilis-hakki/6834"
+    },
+    {
+     "baslik": "160 TL ve Üzeri Lay’s, Ruffles ve Doritos Alışverişine 40 Money",
+     "link": "https://www.money.com.tr/Kampanyalar/Detay/cms/160-tl-ve-uzeri-lays-ruffles-ve-doritos-alisverisine-40-money/6859"
+    },
+    {
+     "baslik": "Doğanay Çekiliş Kampanyası",
+     "link": "https://www.money.com.tr/Kampanyalar/Detay/cms/doganay-cekilis-kampanyasi/6854"
+    },
+    {
+     "baslik": "100 TL ve katları Kitkat Alışverişine 1 çekiliş hakkı!",
+     "link": "https://www.money.com.tr/Kampanyalar/Detay/cms/100-tl-ve-katlari-kitkat-alisverisine-1-cekilis-hakki/6860"
+    }
+   ],
+   "kampanya_kaynagi": "https://www.money.com.tr/mc/kampanyalara-bak/tum-kampanyalar/53"
+  },
+  {
+   "marka": "Edenred",
+   "appstore": {
+    "puan": 4.12,
+    "oy": 141,
+    "surum": "5.108.3",
+    "guncelleme": "2026-09-14"
+   },
+   "play": {
+    "puan": 3.78,
+    "oy": 12695,
+    "yorum": 6944,
+    "indirme": "1.000.000+",
+    "surum": "1.6.17"
+   },
+   "sikayetvar": {
+    "url": "https://www.sikayetvar.com/ticket-restaurant",
+    "sikayet_tum": 2089,
+    "cozulen_tum": 737,
+    "cozum_orani_tum": 75,
+    "sikayet_1ay": 31,
+    "cozulen_1ay": 13,
+    "cozum_orani_1ay": 87,
+    "sikayet_1yil": 525,
+    "cozulen_1yil": 195,
+    "cozum_orani_1yil": 80
+   },
+   "kampanyalar": [
+    {
+     "baslik": "Uçak biletlerinde size özel ayrıcalıklar!",
+     "link": "https://www.edenred.com.tr/red-club/yolcu360-ucak-kampanyasi"
+    },
+    {
+     "baslik": "Araç kiralamalarınızda tüm indirimlere ek %10 İndirim",
+     "link": "https://www.edenred.com.tr/red-club/yolcu360-bahar-indirim-kampanyasi"
+    },
+    {
+     "baslik": "Yurtiçi Kargo ile Tüm Gönderilerinizde %30 İndirim!",
+     "link": "https://www.edenred.com.tr/red-club/yurtici-kargo-kampanyasi"
+    },
+    {
+     "baslik": "Instreet'ten 500 TL İndirim!",
+     "link": "https://www.edenred.com.tr/red-club/instreet-kampanyasi"
+    },
+    {
+     "baslik": "Ninewest'ten 500 TL İndirim!",
+     "link": "https://www.edenred.com.tr/red-club/ninewest-kampanyasi"
+    },
+    {
+     "baslik": "Seyahatlerinizde 8.500 TL 'ye varan İndirim!",
+     "link": "https://www.edenred.com.tr/red-club/fulltrip-kampanyasi"
+    },
+    {
+     "baslik": "n11'den 75 TL İndirim!",
+     "link": "https://www.edenred.com.tr/red-club/n11-kampanyasi"
+    },
+    {
+     "baslik": "Diyetisyen paketlerinde %25 İndirim!",
+     "link": "https://www.edenred.com.tr/red-club/eat-clean-kampanyasi"
+    },
+    {
+     "baslik": "İngilizce Eğitiminde Kaçırılmayacak Fırsat!",
+     "link": "https://www.edenred.com.tr/red-club/wallstreet-kampanyasi"
+    },
+    {
+     "baslik": "Size Özel Ürünlerde İndirim!",
+     "link": "https://www.edenred.com.tr/red-club/brillant-kampanyasi"
+    },
+    {
+     "baslik": "Network'ten Size Özel Fırsat!",
+     "link": "https://www.edenred.com.tr/red-club/network-kampanyasi"
+    },
+    {
+     "baslik": "Divarese'den Size Özel Fırsat!",
+     "link": "https://www.edenred.com.tr/red-club/divarese-kampanyasi"
+    },
+    {
+     "baslik": "Little Ceasers'tan %10 İndirim Fırsatı!",
+     "link": "https://www.edenred.com.tr/red-club/little-caesars-kampanyasi"
+    },
+    {
+     "baslik": "İlk 5 Sürüşte %50 İndirim!",
+     "link": "https://www.edenred.com.tr/red-club/hop-kampanyasi"
+    },
+    {
+     "baslik": "General Mobile Kampanyası",
+     "link": "https://www.edenred.com.tr/red-club/tiktak-kampanyasi"
+    }
+   ],
+   "kampanya_kaynagi": "https://www.edenred.com.tr/red-club"
+  },
+  {
+   "marka": "Multinet (MultiPay)",
+   "appstore": {
+    "puan": 4.82,
+    "oy": 86882,
+    "surum": "5.9.0",
+    "guncelleme": "2026-09-30"
+   },
+   "play": {
+    "puan": 4.64,
+    "oy": 67901,
+    "yorum": 4098,
+    "indirme": "1.000.000+",
+    "surum": "5.6.0"
+   },
+   "sikayetvar": {
+    "url": "https://www.sikayetvar.com/multinet",
+    "sikayet_tum": 1281,
+    "cozulen_tum": 776,
+    "cozum_orani_tum": 98,
+    "sikayet_1ay": 13,
+    "cozulen_1ay": 4,
+    "cozum_orani_1ay": 100,
+    "sikayet_1yil": 372,
+    "cozulen_1yil": 225,
+    "cozum_orani_1yil": 99
+   },
+   "kampanyalar": [
+    {
+     "baslik": "Yolcu360 ile Tüm Yurt Dışı Araç Kiralamalarında İndirim!",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/yolcu360-ile-tum-yurt-disi-arac-kiralamalarinda-indirim"
+    },
+    {
+     "baslik": "OTORAPOR Ekspertiz Paketlerinde İndirim",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/otorapor-ekspertiz-paketlerinde-indirim"
+    },
+    {
+     "baslik": "Trendyol yemek - MultiNet yemek kartıyla, Trendyol yemek'te online ödeme kolaylığı!",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/trenyol-yemek-multinet-yemek-kartiyla-trendyol-yemekte-online-odeme-kolayligi"
+    },
+    {
+     "baslik": "MultiPay ile Temassız Ödeme",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/multipay-ile-temassiz-odeme"
+    },
+    {
+     "baslik": "Sixt'de Tüm Araçlarda Geçerli İndirim",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/sixtde-tum-araclarda-gecerli-indirim"
+    },
+    {
+     "baslik": "Yolcu360 Yurt İçi Araç İndirimi",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/yolcu360-yurt-ici-arac-indirimi"
+    },
+    {
+     "baslik": "MultiNet Yemek Kartıyla, GetirYemek'te Online Ödeme Seçeneği!",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/getir-yemek-multinet-yemek-karti"
+    },
+    {
+     "baslik": "Herkes Kendi Rekoltesini Üretsin Diye %10 İndirim",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/herkes-kendi-rekoltesini-yukseltsin-diye-indirim"
+    },
+    {
+     "baslik": "MultiNet yemek kartıyla, Tıkla Gelsin® Gel Al'da online ödeme seçeneği!",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/multinet-yemek-kartiyla-tikla-gelsinr-gel-alda-online-odeme-secenegi"
+    },
+    {
+     "baslik": "Pocket eSIM'de İndirim Fırsatı",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/pocket-esimde-indirim-firsati"
+    },
+    {
+     "baslik": "Enterprise ile Online Araç Kiralamada İndirim Fırsatı",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/enterprise-ile-online-arac-kiralamada-indirim-firsati"
+    },
+    {
+     "baslik": "MultiNet Yemek Kartınla Yemeksepeti’nde Ödeme Yapmak Artık Çok Kolay!",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/multinet-yemek-kartinla-yemeksepetinde-odeme-yapmak-artik-cok-kolay"
+    },
+    {
+     "baslik": "Bambu Çiçek Alışverişlerinde %15 İndirim Fırsatı!",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/bambu-cicek-alisverislerinde-indirim-firsati"
+    },
+    {
+     "baslik": "Nota Çiçek Alışverişlerinde %15 İndirim Fırsatı!",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/nota-cicek-alisverislerinde-indirim-firsati"
+    },
+    {
+     "baslik": "BinBin'de 250 TL Hediye Bakiye Fırsatı!",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/binbin-de-hediye-bakiye-firsati"
+    },
+    {
+     "baslik": "Tazemasa’da Sağlıklı ve Taze Alışverişe İndirim Fırsatı!",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/tazemasada-saglikli-ve-taze-alisverise-indirim-firsati"
+    },
+    {
+     "baslik": "Rafinera Paketlerinde %25 İndirim Fırsatı!",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/rafinera-paketlerinde-indirim-firsati"
+    },
+    {
+     "baslik": "Fropie’de 250 TL İndirim Fırsatı!",
+     "link": "https://multinet.com.tr/bireysel-kampanyalar/fropie-indirim-firsati"
+    }
+   ],
+   "kampanya_kaynagi": "https://multinet.com.tr/bireysel-kampanyalar"
+  }
+ ]
+}

@@ -11,6 +11,10 @@ from datetime import datetime
 app = Flask(__name__)
 CORS(app)
 
+from zk.web import zk_bp, baslat as zk_baslat  # /zk: yemek kartı rakip takibi
+app.register_blueprint(zk_bp)
+zk_baslat()
+
 system_state = {
     "istasyon_1": {
         "gaz": 120,
