@@ -16,28 +16,34 @@ from zk.scrapers.sikayetvar import sikayetvar
 VERI = Path(__file__).parent / "veri"
 
 
-def _dene(ad, kaynak, fn, *args):
-    try:
-        return fn(*args)
-    except Exception as e:  # tek kaynak bozulunca diğerleri yine gelsin
-        print(f"[zk] {ad} / {kaynak}: {e}", file=sys.stderr)
-        return None
-
-
 def topla():
-    markalar = []
+    markalar, hatalar = [], []
+
+    def dene(ad, kaynak, fn, *args):
+        try:
+            return fn(*args)
+        except Exception as e:  # tek kaynak bozulunca diğerleri yine gelsin
+            print(f"[zk] {ad} / {kaynak}: {e}", file=sys.stderr)
+            hatalar.append(f"{ad} / {kaynak}: {type(e).__name__}: {str(e)[:150]}")
+            return None
+
     for m in MARKALAR:
         k = m["kampanya"]
         markalar.append({
             "marka": m["ad"],
-            "appstore": _dene(m["ad"], "App Store", appstore, m["appstore_id"]),
-            "play": _dene(m["ad"], "Google Play", google_play, m["play_id"]),
-            "sikayetvar": _dene(m["ad"], "Şikayetvar", sikayetvar, m["sikayetvar"]),
-            "kampanyalar": _dene(m["ad"], "Kampanya", kampanyalar, k) if k else None,
+            "appstore": dene(m["ad"], "App Store", appstore, m["appstore_id"]),
+            "play": dene(m["ad"], "Google Play", google_play, m["play_id"]),
+            "sikayetvar": dene(m["ad"], "Şikayetvar", sikayetvar, m["sikayetvar"]),
+            "kampanyalar": dene(m["ad"], "Kampanya", kampanyalar, k) if k else None,
             "kampanya_kaynagi": k["url"] if k else None,
         })
     simdi = datetime.now(timezone.utc)
-    return {"tarih": simdi.date().isoformat(), "guncelleme": simdi.isoformat(timespec="seconds"), "markalar": markalar}
+    return {
+        "tarih": simdi.date().isoformat(),
+        "guncelleme": simdi.isoformat(timespec="seconds"),
+        "hatalar": hatalar,  # bu çekimde gelmeyen kaynaklar (aynı günün önceki değeri kullanılır)
+        "markalar": markalar,
+    }
 
 
 def kaydet(kayit):
