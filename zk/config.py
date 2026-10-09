@@ -18,8 +18,8 @@ MARKALAR = [
         "sikayetvar": "setcard",
         "kampanya": {
             "url": "https://www.setcard.com.tr/kampanyalar",
-            "link": r"/kampanyalar/[a-z0-9-]+/?$",
-            "sayfalar": "https://www.setcard.com.tr/kampanyalar/?page={n}",
+            "link": r"^/kampanyalar/[a-z0-9-]+/?$",
+            "sayfalar": "https://www.setcard.com.tr/kampanyalar?page={n}",  # sonda / olmamalı: sayfadaki göreli linkler buna göre çözülüyor
         },
     },
     {

@@ -57,9 +57,25 @@ def kaydet(kayit):
             for alan in ("appstore", "play", "sikayetvar", "kampanyalar"):
                 if v[alan] is None and eski.get(v["marka"], {}).get(alan) is not None:
                     v[alan] = eski[v["marka"]][alan]
+    _ilk_gorulme_ekle(kayit)
     gecici = yol.with_suffix(f".{os.getpid()}.tmp")
     gecici.write_text(json.dumps(kayit, ensure_ascii=False, indent=1))
     gecici.replace(yol)
+
+
+def _ilk_gorulme_ekle(kayit):
+    """Her kampanyaya sitede ilk görüldüğü günü yazar. Siteler başlangıç tarihi
+    vermediği için "en yeni kampanya" sıralaması buna dayanır."""
+    ilk = {}
+    for k in kayitlar():
+        if k["tarih"] >= kayit["tarih"]:
+            break
+        for v in k["markalar"]:
+            for x in v.get("kampanyalar") or []:
+                ilk.setdefault(x["link"], x.get("ilk_gorulme") or k["tarih"])
+    for v in kayit["markalar"]:
+        for x in v.get("kampanyalar") or []:
+            x["ilk_gorulme"] = ilk.get(x["link"], kayit["tarih"])
 
 
 def kayitlar():

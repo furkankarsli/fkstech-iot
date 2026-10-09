@@ -3,130 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakip Takibi | FKS Tech</title>
+    <title>Rakip Takibi</title>
     <meta name="robots" content="noindex">
     <link rel="icon" type="image/png" href="/static/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-body: #0d1117;
-            --bg-card: #161b22;
-            --bg-hover: #1c2129;
-            --border-color: #30363d;
-            --text-main: #c9d1d9;
-            --text-muted: #8b949e;
-            --text-white: #f0f6fc;
-            --primary: #58a6ff;
-            --success: #3fb950;
-            --warning: #d29922;
-            --danger: #f85149;
-            --radius-md: 8px;
-            --radius-sm: 6px;
+            --bg: #fbfbf9;
+            --fg: #1d1d1b;
+            --muted: #6b6b66;
+            --line: #e3e2dd;
+            --line-strong: #1d1d1b;
+            --mark: #f3efe3;
+            --new: #2f6b3a;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
-            background: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.5;
-            font-size: 14px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            font-size: 15px;
+            line-height: 1.45;
         }
-        .wrap { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px; }
-        header { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; justify-content: space-between; margin-bottom: 24px; }
-        h1 { font-family: 'Outfit', sans-serif; color: var(--text-white); font-size: 26px; font-weight: 600; }
-        h2 { font-family: 'Outfit', sans-serif; color: var(--text-white); font-size: 18px; font-weight: 600; margin-bottom: 12px; }
-        .sub { color: var(--text-muted); font-size: 13px; margin-top: 4px; }
-        .actions { display: flex; gap: 8px; flex-wrap: wrap; }
-        .btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--bg-card); color: var(--text-main);
-            border: 1px solid var(--border-color); border-radius: var(--radius-sm);
-            padding: 8px 14px; font: inherit; font-weight: 500; cursor: pointer; text-decoration: none;
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+        header { border-bottom: 2px solid var(--line-strong); padding-bottom: 12px; margin-bottom: 28px; }
+        h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }
+        h2 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+        .meta { color: var(--muted); font-size: 13px; margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; }
+        .meta button, .meta a {
+            font: inherit; color: var(--fg); background: none; border: 0; padding: 0;
+            text-decoration: underline; text-underline-offset: 2px; cursor: pointer;
         }
-        .btn:hover { border-color: var(--primary); color: var(--text-white); }
-        .btn:disabled { opacity: .5; cursor: wait; }
-        .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px; }
-        .table-wrap { overflow-x: auto; }
+        .meta button:disabled { color: var(--muted); cursor: default; text-decoration: none; }
+        .warn { color: #8a5a00; font-size: 13px; margin-top: 4px; }
+        section { margin-bottom: 40px; }
+        .note { color: var(--muted); font-size: 13px; margin-top: 10px; max-width: 75ch; }
+
+        /* Özet tablosu */
         table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
-        th, td { padding: 10px 12px; border-bottom: 1px solid var(--border-color); text-align: right; white-space: nowrap; }
-        th { color: var(--text-muted); font-weight: 500; font-size: 12px; vertical-align: bottom; white-space: normal; min-width: 80px; }
-        th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: var(--bg-card); }
-        tr.biz td { background: rgba(88, 166, 255, .07); }
-        tr.biz td:first-child { color: var(--primary); font-weight: 600; background: #18202b; }
-        td.best { color: var(--success); font-weight: 600; }
-        td.worst { color: var(--danger); }
-        .muted { color: var(--text-muted); }
-        .group { border-left: 1px solid var(--border-color); }
-        .note { color: var(--text-muted); font-size: 12px; margin-top: 12px; }
-        .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-        .chip {
-            border: 1px solid var(--border-color); background: transparent; color: var(--text-main);
-            border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer;
+        th, td { padding: 9px 8px; text-align: right; border-bottom: 1px solid var(--line); vertical-align: top; }
+        th { font-size: 12px; font-weight: 600; color: var(--muted); vertical-align: bottom; border-bottom-color: var(--line-strong); }
+        th:first-child, td:first-child { text-align: left; padding-left: 0; }
+        td:first-child { font-weight: 600; }
+        tr.biz td { background: var(--mark); }
+        tr.biz td:first-child { padding-left: 6px; }
+        .v { display: block; }
+        .s { display: block; font-size: 12px; color: var(--muted); }
+        .best .v { font-weight: 700; }
+        .best .v::after { content: " ▲"; font-size: 9px; vertical-align: 2px; }
+        .bad .v::after { content: " ▼"; font-size: 9px; vertical-align: 2px; color: var(--muted); }
+
+        /* Kampanyalar */
+        .tabs { display: flex; flex-wrap: wrap; gap: 2px 14px; margin-bottom: 10px; font-size: 14px; }
+        .tabs button {
+            font: inherit; background: none; border: 0; padding: 2px 0; cursor: pointer; color: var(--muted);
+            border-bottom: 2px solid transparent;
         }
-        .chip.on { background: var(--primary); border-color: var(--primary); color: #0d1117; font-weight: 600; }
+        .tabs button.on { color: var(--fg); border-bottom-color: var(--fg); font-weight: 600; }
         input[type=search] {
-            width: 100%; max-width: 360px; background: var(--bg-body); border: 1px solid var(--border-color);
-            color: var(--text-white); border-radius: var(--radius-sm); padding: 8px 12px; font: inherit; margin-bottom: 12px;
+            width: 100%; max-width: 320px; font: inherit; font-size: 14px; padding: 6px 8px;
+            border: 1px solid var(--line); background: #fff; color: var(--fg); border-radius: 2px; margin-bottom: 6px;
         }
+        .kamp-kutu { max-height: 460px; overflow-y: auto; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
         .kamp { list-style: none; }
-        .kamp li { display: flex; gap: 10px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid var(--border-color); }
         .kamp li:last-child { border-bottom: 0; }
-        .kamp a { color: var(--text-main); text-decoration: none; flex: 1; min-width: 0; overflow-wrap: anywhere; }
-        .kamp a:hover { color: var(--primary); }
-        .kamp .m { color: var(--text-muted); font-size: 12px; min-width: 110px; }
-        .badge { font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 4px; }
-        .badge.yeni { background: rgba(63, 185, 80, .15); color: var(--success); }
-        .badge.kalkti { background: rgba(139, 148, 158, .15); color: var(--text-muted); }
-        li.kalkti a { text-decoration: line-through; color: var(--text-muted); }
-        .uyari { color: var(--warning); }
-        .empty { color: var(--text-muted); padding: 32px 0; text-align: center; }
-        .spin { animation: spin 1s linear infinite; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        @media (max-width: 600px) {
-            .kamp li { flex-wrap: wrap; }
-            .kamp .m { min-width: 0; width: 100%; }
+        .kamp li { display: grid; grid-template-columns: 90px 1fr auto; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+        .kamp .m { color: var(--muted); }
+        .kamp a { color: var(--fg); text-decoration: none; overflow-wrap: anywhere; }
+        .kamp a:hover { text-decoration: underline; }
+        .tag { font-size: 11px; font-weight: 700; letter-spacing: .02em; }
+        .tag.yeni { color: var(--new); }
+        .tag.kalkti { color: var(--muted); }
+        li.kalkti a { color: var(--muted); text-decoration: line-through; }
+        .tarih { color: var(--muted); font-size: 12px; white-space: nowrap; }
+        .count { color: var(--muted); font-size: 12px; margin-top: 6px; }
+        .empty { color: var(--muted); padding: 16px 0; }
+
+        /* Geçmiş */
+        #gecmis th, #gecmis td { font-size: 13px; padding: 6px 6px; }
+
+        @media (max-width: 720px) {
+            body { font-size: 14px; }
+            .wrap { padding-top: 20px; }
+            h1 { font-size: 21px; }
+
+            /* Özet: her marka bir blok */
+            #ozet thead { display: none; }
+            #ozet, #ozet tbody, #ozet tr { display: block; }
+            #ozet tr { border-bottom: 1px solid var(--line-strong); padding: 10px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px 10px; }
+            #ozet tr.biz { background: var(--mark); padding: 10px 8px; }
+            #ozet td { display: block; border: 0; padding: 0; text-align: left; background: none !important; }
+            #ozet td:first-child { grid-column: 1 / -1; font-size: 16px; padding: 0; }
+            #ozet td[data-l]::before { content: attr(data-l); display: block; font-size: 11px; color: var(--muted); }
+
+            .kamp-kutu { max-height: 60vh; }
+            .kamp li { grid-template-columns: 1fr auto; gap: 2px 10px; }
+            .kamp .m { grid-column: 1 / -1; font-size: 12px; }
+            #gecmis th, #gecmis td { font-size: 12px; padding: 5px 3px; }
         }
     </style>
 </head>
 <body>
 <div class="wrap">
     <header>
-        <div>
-            <h1>Yemek Kartı Rakip Takibi</h1>
-            <div class="sub" id="guncelleme">Yükleniyor…</div>
-            <div class="sub uyari" id="hatalar" hidden></div>
+        <h1>Yemek kartı rakip takibi</h1>
+        <div class="meta">
+            <span id="guncelleme">Yükleniyor…</span>
+            <button id="yenileBtn" type="button">Şimdi yenile</button>
+            <a href="/zk/rapor.xlsx">Excel indir</a>
         </div>
-        <div class="actions">
-            <button class="btn" id="yenileBtn"><i class="fa-solid fa-rotate"></i> Şimdi yenile</button>
-            <a class="btn" href="/zk/rapor.xlsx"><i class="fa-solid fa-file-excel"></i> Excel indir</a>
-        </div>
+        <div class="warn" id="hatalar" hidden></div>
     </header>
 
-    <section class="card">
+    <section>
         <h2>Özet</h2>
-        <div class="table-wrap"><table id="ozet"></table></div>
+        <table id="ozet"></table>
         <p class="note">
-            Şikayetvar kıyası son 1 yıl üzerinden (tüm zamanlar sayısı eski markalarda doğal olarak yüksek).
-            "Çözüm %" Şikayetvar'ın şikayetçi puanlarından hesapladığı çözüm başarısıdır.
-            Kampanya sayısı markanın web sitesinde listelenenlerdir; uygulama içi kampanyalar dahil değildir.
-            Yeşil: o sütunda en iyi, kırmızı: en kötü.
+            ▲ sütundaki en iyi değer, ▼ en zayıf. Şikayetler Şikayetvar'ın son 1 yıl verisi; altındaki küçük sayı tüm zamanlar.
+            Çözüm %, Şikayetvar'ın şikayetçi puanlarından hesapladığı çözüm başarısı. Kampanya sayısı markanın web sitesinde
+            listelenenler; değişiklik olursa altında önceki güne göre eklenen ve kalkan sayısı yazar. Diğer detaylar Excel'de.
         </p>
     </section>
 
-    <section class="card">
+    <section>
         <h2>Kampanyalar</h2>
-        <div class="chips" id="chips"></div>
-        <input type="search" id="ara" placeholder="Kampanya ara…">
-        <ul class="kamp" id="kampanyalar"></ul>
+        <div class="tabs" id="tabs"></div>
+        <input type="search" id="ara" placeholder="Kampanya ara">
+        <div class="kamp-kutu"><ul class="kamp" id="kampanyalar"></ul></div>
+        <div class="count" id="kampSayi"></div>
     </section>
 
-    <section class="card" id="gecmisKart" hidden>
+    <section id="gecmisBol" hidden>
         <h2>Geçmiş</h2>
-        <div class="chips" id="metrikChips"></div>
-        <div class="table-wrap"><table id="gecmis"></table></div>
+        <div class="tabs" id="metrikTabs"></div>
+        <table id="gecmis"></table>
     </section>
 </div>
 
@@ -134,45 +143,44 @@
 const BIZ = "TokenFlex";
 let D = null, secili = "Tümü", metrik = "sikayet_1yil";
 
-const fmt = (x, d = 0) => x === null || x === undefined || x === "-" ? "–"
+const kisa = m => ({ "Moneypay / Migros Money": "Money", "Multinet (MultiPay)": "Multinet" }[m] || m);
+const fmt = (x, d = 0) => x === null || x === undefined ? "–"
     : typeof x === "number" ? x.toLocaleString("tr-TR", { maximumFractionDigits: d, minimumFractionDigits: d }) : x;
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const g = (o, ...k) => k.reduce((a, b) => a == null ? null : a[b], o);
 
-// [başlık, değer, ondalık, yüksek mi iyi (null = renklendirme yok), grup başı mı]
+// [başlık, ana değer, ondalık, yüksek mi iyi (null: işaretleme yok), alt satır]
 const KOLONLAR = [
-    ["Aktif kampanya (web)", v => v.kampanyalar ? v.kampanyalar.length : null, 0, true, true],
-    ["App Store puan", v => g(v, "appstore", "puan"), 2, true, true],
-    ["App Store oy", v => g(v, "appstore", "oy"), 0, null],
-    ["Google Play puan", v => g(v, "play", "puan"), 2, true, true],
-    ["Google Play oy", v => g(v, "play", "oy"), 0, null],
-    ["Şikayet (1 yıl)", v => g(v, "sikayetvar", "sikayet_1yil"), 0, false, true],
-    ["Çözülen (1 yıl)", v => g(v, "sikayetvar", "cozulen_1yil"), 0, null],
-    ["Çözüm % (1 yıl)", v => g(v, "sikayetvar", "cozum_orani_1yil"), 0, true],
-    ["Şikayet (1 ay)", v => g(v, "sikayetvar", "sikayet_1ay"), 0, false],
-    ["Şikayet (tüm)", v => g(v, "sikayetvar", "sikayet_tum"), 0, null],
-    ["Yeni / kalkan kamp.", v => D.onceki_tarih ? `+${D.fark[v.marka].yeni.length} / −${D.fark[v.marka].kalkan.length}` : null, 0, null, true],
+    ["Kampanya", v => v.kampanyalar ? v.kampanyalar.length : null, 0, true,
+        v => {
+            const f = D.fark[v.marka];
+            return f.yeni.length || f.kalkan.length ? `+${f.yeni.length} yeni / −${f.kalkan.length} kalktı` : "";
+        }],
+    ["App Store", v => g(v, "appstore", "puan"), 2, true, v => g(v, "appstore", "oy") != null ? fmt(g(v, "appstore", "oy")) + " oy" : ""],
+    ["Google Play", v => g(v, "play", "puan"), 2, true, v => g(v, "play", "oy") != null ? fmt(g(v, "play", "oy")) + " oy" : ""],
+    ["Şikayet (1 yıl)", v => g(v, "sikayetvar", "sikayet_1yil"), 0, false, v => g(v, "sikayetvar", "sikayet_tum") != null ? fmt(g(v, "sikayetvar", "sikayet_tum")) + " toplam" : ""],
+    ["Çözüm %", v => g(v, "sikayetvar", "cozum_orani_1yil"), 0, true, v => g(v, "sikayetvar", "cozulen_1yil") != null ? fmt(g(v, "sikayetvar", "cozulen_1yil")) + " çözülen" : ""],
+    ["Şikayet (1 ay)", v => g(v, "sikayetvar", "sikayet_1ay"), 0, false, () => ""],
 ];
 
 function ozet() {
     const M = D.markalar;
-    let h = "<thead><tr><th>Marka</th>" + KOLONLAR.map(k => `<th class="${k[4] ? "group" : ""}">${k[0]}</th>`).join("") + "</tr></thead><tbody>";
     const uc = KOLONLAR.map(k => {
-        if (k[3] === null) return null;
         const vals = M.map(k[1]).filter(x => typeof x === "number");
-        return vals.length > 1 ? [Math.max(...vals), Math.min(...vals)] : null;
+        return k[3] === null || vals.length < 2 ? null : [Math.max(...vals), Math.min(...vals)];
     });
+    let h = "<thead><tr><th>Marka</th>" + KOLONLAR.map(k => `<th>${k[0]}</th>`).join("") + "</tr></thead><tbody>";
     for (const v of M) {
         h += `<tr class="${v.marka === BIZ ? "biz" : ""}"><td>${esc(v.marka)}</td>`;
         KOLONLAR.forEach((k, i) => {
             const x = k[1](v);
-            let c = k[4] ? "group" : "";
+            let c = "";
             if (uc[i] && typeof x === "number" && uc[i][0] !== uc[i][1]) {
-                const [mx, mn] = uc[i];
-                if (x === (k[3] ? mx : mn)) c += " best";
-                else if (x === (k[3] ? mn : mx)) c += " worst";
+                const [iyi, kotu] = k[3] ? uc[i] : [uc[i][1], uc[i][0]];
+                c = x === iyi ? "best" : x === kotu ? "bad" : "";
             }
-            h += `<td class="${c}">${fmt(x, k[2])}</td>`;
+            const alt = k[4](v);
+            h += `<td class="${c}" data-l="${k[0]}"><span class="v">${fmt(x, k[2])}</span>${alt ? `<span class="s">${alt}</span>` : ""}</td>`;
         });
         h += "</tr>";
     }
@@ -180,85 +188,86 @@ function ozet() {
 }
 
 function kampanyalar() {
-    const markalar = ["Tümü", ...D.markalar.map(v => v.marka)];
-    document.getElementById("chips").innerHTML = markalar.map(m => {
-        const v = D.markalar.find(x => x.marka === m);
-        const n = m === "Tümü" ? D.markalar.reduce((a, x) => a + (x.kampanyalar ? x.kampanyalar.length : 0), 0)
-            : (v.kampanyalar ? v.kampanyalar.length : "–");
-        return `<button class="chip ${m === secili ? "on" : ""}" data-m="${esc(m)}">${esc(m)} (${n})</button>`;
-    }).join("");
+    const toplam = D.markalar.reduce((a, x) => a + (x.kampanyalar ? x.kampanyalar.length : 0), 0);
+    document.getElementById("tabs").innerHTML = [["Tümü", toplam], ...D.markalar.map(v => [v.marka, v.kampanyalar ? v.kampanyalar.length : "–"])]
+        .map(([m, n]) => `<button type="button" class="${m === secili ? "on" : ""}" data-m="${esc(m)}">${esc(kisa(m))} ${n}</button>`).join("");
+
     const q = document.getElementById("ara").value.toLocaleLowerCase("tr");
-    let satirlar = [];
-    for (const v of D.markalar) {
-        if (secili !== "Tümü" && v.marka !== secili) continue;
+    const ilkGun = D.gecmis.length ? D.gecmis[0].tarih : D.tarih;
+    const satirlar = [];
+    let not = "";
+    D.markalar.forEach((v, mi) => {
+        if (secili !== "Tümü" && v.marka !== secili) return;
         const f = D.fark[v.marka];
         if (!v.kampanyalar) {
-            if (secili === v.marka) satirlar.push(`<li><span class="m">${esc(v.marka)}</span><span class="muted">Web sitesinde kampanya listesi yok (kampanyalar uygulama içinde).</span></li>`);
-            continue;
+            if (secili === v.marka) not = "Web sitesinde kampanya listesi yok; kampanyalar uygulama içinde.";
+            return;
         }
-        const liste = [
-            ...v.kampanyalar.map(k => ({ ...k, durum: f.yeni.includes(k.link) ? "yeni" : "" })),
-            ...f.kalkan.map(k => ({ ...k, durum: "kalkti" })),
-        ].sort((a, b) => (b.durum === "yeni") - (a.durum === "yeni"));
-        for (const k of liste) {
-            if (q && !k.baslik.toLocaleLowerCase("tr").includes(q)) continue;
-            const badge = k.durum === "yeni" ? '<span class="badge yeni">YENİ</span>' : k.durum === "kalkti" ? '<span class="badge kalkti">KALKTI</span>' : "";
-            satirlar.push(`<li class="${k.durum}"><span class="m">${esc(v.marka)}</span><a href="${esc(k.link)}" target="_blank" rel="noopener">${esc(k.baslik)}</a>${badge}</li>`);
-        }
-    }
-    document.getElementById("kampanyalar").innerHTML = satirlar.join("") || '<li class="empty">Kampanya bulunamadı.</li>';
+        v.kampanyalar.forEach((k, i) => satirlar.push({ v, k, mi, i, ilk: k.ilk_gorulme || D.tarih, durum: f.yeni.includes(k.link) ? "yeni" : "" }));
+        f.kalkan.forEach((k, i) => satirlar.push({ v, k, mi, i, ilk: "", durum: "kalkti" }));
+    });
+    // 1) ilk görülme tarihi yeni olan önde  2) aynı günse sitedeki sırası  3) markalar dönüşümlü
+    satirlar.sort((a, b) => b.ilk.localeCompare(a.ilk) || a.i - b.i || a.mi - b.mi);
+    const goster = satirlar.filter(s => !q || s.k.baslik.toLocaleLowerCase("tr").includes(q));
+    const gun = t => new Date(t).toLocaleDateString("tr-TR", { day: "numeric", month: "short" });
+    document.getElementById("kampanyalar").innerHTML = goster.map(s => {
+        const sag = s.durum === "yeni" ? '<span class="tag yeni">YENİ</span>'
+            : s.durum === "kalkti" ? '<span class="tag kalkti">KALKTI</span>'
+            : s.ilk > ilkGun ? `<span class="tarih">${gun(s.ilk)}</span>` : "<span></span>";
+        return `<li class="${s.durum}"><span class="m">${esc(kisa(s.v.marka))}</span><a href="${esc(s.k.link)}" target="_blank" rel="noopener">${esc(s.k.baslik)}</a>${sag}</li>`;
+    }).join("") || `<li class="empty">${not || "Kampanya bulunamadı."}</li>`;
+    document.getElementById("kampSayi").textContent = goster.length
+        ? `${goster.length} kampanya · en son eklenen üstte (sitede ilk görüldüğü güne göre)` : "";
+    document.getElementById("kampanyalar").parentElement.scrollTop = 0;
 }
 
 const METRIKLER = [["sikayet_1yil", "Şikayet (1 yıl)", 0], ["cozum_orani_1yil", "Çözüm %", 0], ["appstore", "App Store", 2], ["play", "Google Play", 2], ["kampanya", "Kampanya", 0]];
 function gecmis() {
     const G = D.gecmis;
     if (G.length < 2) return;
-    document.getElementById("gecmisKart").hidden = false;
-    document.getElementById("metrikChips").innerHTML = METRIKLER.map(m => `<button class="chip ${m[0] === metrik ? "on" : ""}" data-k="${m[0]}">${m[1]}</button>`).join("");
+    document.getElementById("gecmisBol").hidden = false;
+    document.getElementById("metrikTabs").innerHTML = METRIKLER.map(m => `<button type="button" class="${m[0] === metrik ? "on" : ""}" data-k="${m[0]}">${m[1]}</button>`).join("");
     const d = METRIKLER.find(m => m[0] === metrik)[2];
     const markalar = D.markalar.map(v => v.marka);
-    let h = "<thead><tr><th>Tarih</th>" + markalar.map(m => `<th>${esc(m)}</th>`).join("") + "</tr></thead><tbody>";
-    for (const gun of [...G].reverse()) {
-        h += `<tr><td>${gun.tarih}</td>` + markalar.map(m => `<td>${fmt(g(gun.markalar, m, metrik), d)}</td>`).join("") + "</tr>";
+    let h = "<thead><tr><th>Tarih</th>" + markalar.map(m => `<th>${esc(kisa(m))}</th>`).join("") + "</tr></thead><tbody>";
+    for (const gun of [...G].reverse().slice(0, 30)) {
+        const t = new Date(gun.tarih).toLocaleDateString("tr-TR", { day: "numeric", month: "short" });
+        h += `<tr><td>${t}</td>` + markalar.map(m => `<td>${fmt(g(gun.markalar, m, metrik), d)}</td>`).join("") + "</tr>";
     }
     document.getElementById("gecmis").innerHTML = h + "</tbody>";
 }
 
 async function yukle() {
-    const r = await fetch("/zk/api/data");
-    const j = await r.json();
+    const j = await (await fetch("/zk/api/data")).json();
     const btn = document.getElementById("yenileBtn");
     btn.disabled = j.yenileniyor;
-    btn.querySelector("i").classList.toggle("spin", j.yenileniyor);
+    btn.textContent = j.yenileniyor ? "Yenileniyor…" : "Şimdi yenile";
     if (!j.veri) {
         document.getElementById("guncelleme").textContent = "Veriler ilk kez çekiliyor, yaklaşık 30 saniye…";
         setTimeout(yukle, 5000);
         return;
     }
     D = j.veri;
-    const t = new Date(D.guncelleme).toLocaleString("tr-TR", { dateStyle: "long", timeStyle: "short" });
-    document.getElementById("guncelleme").textContent = `Son güncelleme: ${t}` +
-        (D.onceki_tarih ? ` · Kampanya değişimleri ${D.onceki_tarih} kaydına göre` : "") +
-        (j.yenileniyor ? " · yenileniyor…" : "");
+    const t = new Date(D.guncelleme).toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+    document.getElementById("guncelleme").textContent = `Güncelleme: ${t}`;
     const H = D.hatalar || [];
     const he = document.getElementById("hatalar");
     he.hidden = !H.length;
-    he.textContent = H.length ? `Son çekimde ${H.length} kaynak alınamadı (önceki değer gösteriliyor): ` + H.map(x => x.split(":")[0]).join(", ") : "";
+    he.textContent = H.length ? `Son çekimde alınamayan kaynaklar (önceki değer gösteriliyor): ${H.map(x => x.split(":")[0]).join(", ")}` : "";
     he.title = H.join("\n");
     ozet(); kampanyalar(); gecmis();
     if (j.yenileniyor) setTimeout(yukle, 5000);
 }
 
-document.getElementById("chips").addEventListener("click", e => {
-    const m = e.target.closest(".chip")?.dataset.m; if (m) { secili = m; kampanyalar(); }
+document.getElementById("tabs").addEventListener("click", e => {
+    const m = e.target.closest("button")?.dataset.m; if (m) { secili = m; kampanyalar(); }
 });
-document.getElementById("metrikChips").addEventListener("click", e => {
-    const k = e.target.closest(".chip")?.dataset.k; if (k) { metrik = k; gecmis(); }
+document.getElementById("metrikTabs").addEventListener("click", e => {
+    const k = e.target.closest("button")?.dataset.k; if (k) { metrik = k; gecmis(); }
 });
 document.getElementById("ara").addEventListener("input", () => D && kampanyalar());
 document.getElementById("yenileBtn").addEventListener("click", async () => {
-    const r = await fetch("/zk/api/yenile", { method: "POST" });
-    const j = await r.json();
+    const j = await (await fetch("/zk/api/yenile", { method: "POST" })).json();
     if (j.durum === "guncel") alert(j.mesaj);
     yukle();
 });
