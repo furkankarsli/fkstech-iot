@@ -98,6 +98,6 @@ def excel():
     return send_file(
         buf,
         as_attachment=True,
-        download_name=f"rakip_takibi_{d['tarih']}.xlsx",
+        download_name=f"pazar_gorunumu_{d['tarih']}.xlsx",
         mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     )

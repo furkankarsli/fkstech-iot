@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakip Takibi</title>
+    <title>Pazar Görünümü</title>
     <meta name="robots" content="noindex">
     <link rel="icon" type="image/png" href="/static/favicon.png">
     <style>
@@ -27,6 +27,7 @@
         .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
         header { border-bottom: 2px solid var(--line-strong); padding-bottom: 12px; margin-bottom: 28px; }
         h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }
+        .kicker { font-size: 14px; color: var(--muted); margin-top: 2px; }
         h2 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
         .meta { color: var(--muted); font-size: 13px; margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; }
         .meta button, .meta a {
@@ -105,7 +106,8 @@
 <body>
 <div class="wrap">
     <header>
-        <h1>Yemek kartı rakip takibi</h1>
+        <h1>Pazar görünümü</h1>
+        <div class="kicker">Yemek ve yan hak kartları</div>
         <div class="meta">
             <span id="guncelleme">Yükleniyor…</span>
             <button id="yenileBtn" type="button">Şimdi yenile</button>
