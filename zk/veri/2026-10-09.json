@@ -1,7 +1,14 @@
 {
  "tarih": "2026-10-09",
- "guncelleme": "2026-10-09T08:22:15+00:00",
- "hatalar": [],
+ "guncelleme": "2026-10-09T11:36:09+00:00",
+ "hatalar": [
+  "TokenFlex / Şikayetvar: HTTPError: 403 Client Error: Forbidden for url: https://www.sikayetvar.com/token-flex",
+  "Setcard / Şikayetvar: HTTPError: 403 Client Error: Forbidden for url: https://www.sikayetvar.com/setcard",
+  "iWallet / Şikayetvar: HTTPError: 403 Client Error: Forbidden for url: https://www.sikayetvar.com/iwallet",
+  "Moneypay / Migros Money / Şikayetvar: HTTPError: 403 Client Error: Forbidden for url: https://www.sikayetvar.com/moneypay",
+  "Edenred / Şikayetvar: HTTPError: 403 Client Error: Forbidden for url: https://www.sikayetvar.com/ticket-restaurant",
+  "Multinet (MultiPay) / Şikayetvar: HTTPError: 403 Client Error: Forbidden for url: https://www.sikayetvar.com/multinet"
+ ],
  "markalar": [
   {
    "marka": "TokenFlex",
@@ -663,13 +670,13 @@
    "marka": "Setcard",
    "appstore": {
     "puan": 4.58,
-    "oy": 14611,
+    "oy": 14615,
     "surum": "5.2.16",
     "guncelleme": "2026-08-25"
    },
    "play": {
     "puan": 4.63,
-    "oy": 12497,
+    "oy": 12502,
     "yorum": 1556,
     "indirme": "1.000.000+",
     "surum": "Varies with device"
@@ -914,13 +921,13 @@
    "marka": "Moneypay / Migros Money",
    "appstore": {
     "puan": 4.78,
-    "oy": 54514,
+    "oy": 54520,
     "surum": "6.3.1",
     "guncelleme": "2026-09-22"
    },
    "play": {
     "puan": 4.62,
-    "oy": 30268,
+    "oy": 30269,
     "yorum": 9721,
     "indirme": "1.000.000+",
     "surum": "6.3.1"
@@ -979,14 +986,14 @@
   {
    "marka": "Edenred",
    "appstore": {
-    "puan": 4.12,
-    "oy": 141,
+    "puan": 4.11,
+    "oy": 139,
     "surum": "5.108.3",
     "guncelleme": "2026-09-14"
    },
    "play": {
-    "puan": 3.77,
-    "oy": 12693,
+    "puan": 3.78,
+    "oy": 12695,
     "yorum": 6941,
     "indirme": "1.000.000+",
     "surum": "1.6.17"
